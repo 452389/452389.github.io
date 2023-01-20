@@ -149,7 +149,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -185,6 +185,81 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/20/sql%E6%B3%A8%E5%85%A5%E4%B9%8B%E5%B8%B8%E8%A7%81%E7%BB%95%E8%BF%87%E6%96%B9%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/apple-touch-icon-next.png">
+      <meta itemprop="name" content="清者">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The future is promising">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | The future is promising">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/01/20/sql%E6%B3%A8%E5%85%A5%E4%B9%8B%E5%B8%B8%E8%A7%81%E7%BB%95%E8%BF%87%E6%96%B9%E5%BC%8F/" class="post-title-link" itemprop="url">sql注入之常见绕过方式</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-01-20 17:21:37 / 修改时间：17:48:27" itemprop="dateCreated datePublished" datetime="2023-01-20T17:21:37+08:00">2023-01-20</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="双写绕过"><a href="#双写绕过" class="headerlink" title="双写绕过"></a>双写绕过</h2><p>如当我们进行联合查询时输入union select发现被过滤了<br>那我们便可以输入ununionion selselectect来进行过滤<br>有的时候会被过滤两次或更多这时我们可以也多输入几次来进行绕过</p>
+<h2 id="大小写绕过"><a href="#大小写绕过" class="headerlink" title="大小写绕过"></a>大小写绕过</h2><p>如当我们进行联合查询时输入union select发现被过滤了<br>我们可以将所输入内容其中任何一个字母来进行大小写替换如：uNion select来进行过滤</p>
+<h2 id="空格绕过"><a href="#空格绕过" class="headerlink" title="空格绕过"></a>空格绕过</h2><p>如果空格被过滤掉了，那么我们可以用/**/，%09，%0a，%0d，%0b，（），+，-，tab键，两个空格，反引号等进行替换来达到绕过的目的</p>
+<h2 id="等号绕过"><a href="#等号绕过" class="headerlink" title="等号绕过"></a>等号绕过</h2><p>当等号被过滤掉时我们可以用like，&lt;&gt;来进行代替<br>&lt;&gt;等价于!=所以我们可以在&lt;&gt;前加个!就变成等于了</p>
+<h2 id="宽字节注入"><a href="#宽字节注入" class="headerlink" title="宽字节注入"></a>宽字节注入</h2><h3 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h3><p>在实际应用中，为防止注入漏洞通常会把单引号处理下比如：<br>$id=$_GET[‘id’]；<br>select * from users where id = $id’<br>上边呢我们输入进去的 SQL 语句，都会赋值给 $id这个变量，然后会被包含在引号里，在PHP中引号里的内容是属于字符串的，所以我们直接在这里输入的一些 SQL 命令都会被当作字符串处理，这些命令就不会起到作用。<br>所以我们在字符型注入中才会先用单引号闭合下，再输入SQL命令，这样后面的命令才会执行。如果程序中在我们输入的单引号前加上个反斜杠比如：\’。这样的话这个单引号就是个字符了，没有单引号闭合的作用，所以就起到了防护的作用<br>为了突破这个防护，我们可以使用宽字节注入的方式进行突破：<br>我们的使用方式是：%df’<br>当我们在单引号前加上%df的时候，也就是输入%df’这样传入到数据库中就会变成：%df%5c’<br>在GBK的编码表中<a target="_blank" rel="noopener" href="https://www.qqxiuzi.cn/zh/hanzi-gbk-bianma.php%E4%BE%BF%E4%BC%9A%E6%9C%89%E7%9B%B8%E5%AF%B9%E5%BA%94%E7%9A%84%E5%AD%97">https://www.qqxiuzi.cn/zh/hanzi-gbk-bianma.php便会有相对应的字</a><br>另外%DE%5c,%E0%5c等都是可以的</p>
+<h3 id="注入步骤"><a href="#注入步骤" class="headerlink" title="注入步骤"></a>注入步骤</h3><p>一，在id=1后面添加单引号发现被转义<br>二，使用%df进行闭合:id=1%df’ and 1=1%23</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
