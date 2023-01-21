@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.2">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="File:&#x2F;&#x2F;为协议(1)file:&#x2F;&#x2F;一用于访问本地文件系统(2)php版本：5.0以上(3)是PHP使用的默认封装协议(4)当指定了一个相对路径(不以&#x2F;、\、\或Windows盘符开头的路径)提供的路径将基于当前的工作目录受allow_url_fopen影响 No允许读取  Yes允许写入  Yes允许添加  Yes允许同时读和写  Yes php:&#x2F;&#x2F;filter伪协议(1)php:&#x2F;&#x2F;fi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文件包含伪协议">
+<meta property="og:url" content="http://example.com/2023/01/21/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E4%BC%AA%E5%8D%8F%E8%AE%AE/index.html">
+<meta property="og:site_name" content="The future is promising">
+<meta property="og:description" content="File:&#x2F;&#x2F;为协议(1)file:&#x2F;&#x2F;一用于访问本地文件系统(2)php版本：5.0以上(3)是PHP使用的默认封装协议(4)当指定了一个相对路径(不以&#x2F;、\、\或Windows盘符开头的路径)提供的路径将基于当前的工作目录受allow_url_fopen影响 No允许读取  Yes允许写入  Yes允许添加  Yes允许同时读和写  Yes php:&#x2F;&#x2F;filter伪协议(1)php:&#x2F;&#x2F;fi">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-01-21T09:55:29.000Z">
+<meta property="article:modified_time" content="2023-01-21T10:51:20.231Z">
+<meta property="article:author" content="清者">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2023/01/21/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E4%BC%AA%E5%8D%8F%E8%AE%AE/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/01/21/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E4%BC%AA%E5%8D%8F%E8%AE%AE/","path":"2023/01/21/文件包含伪协议/","title":"文件包含伪协议"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>文件包含伪协议 | The future is promising</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">The future is promising</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">knowledge is infinite</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#File-%E4%B8%BA%E5%8D%8F%E8%AE%AE"><span class="nav-number">1.</span> <span class="nav-text">File:&#x2F;&#x2F;为协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#php-filter%E4%BC%AA%E5%8D%8F%E8%AE%AE"><span class="nav-number">2.</span> <span class="nav-text">php:&#x2F;&#x2F;filter伪协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#php-input%E4%BC%AA%E5%8D%8F%E8%AE%AE"><span class="nav-number">3.</span> <span class="nav-text">php:&#x2F;&#x2F;input伪协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#data-%E4%BC%AA%E5%8D%8F%E8%AE%AE"><span class="nav-number">4.</span> <span class="nav-text">data:&#x2F;&#x2F;伪协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#http-%E4%BC%AA%E5%8D%8F%E8%AE%AE"><span class="nav-number">5.</span> <span class="nav-text">http:&#x2F;&#x2F;伪协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ftp-%E4%BC%AA%E5%8D%8F%E8%AE%AE"><span class="nav-number">6.</span> <span class="nav-text">ftp:&#x2F;&#x2F;伪协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#phar"><span class="nav-number">7.</span> <span class="nav-text">phar</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#phar%E4%BB%8B%E7%BB%8D"><span class="nav-number">7.1.</span> <span class="nav-text">phar介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#phar%E4%BC%AA%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%88%A9%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="nav-number">7.2.</span> <span class="nav-text">phar伪协议的利用方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zip-%E4%BC%AA%E5%8D%8F%E8%AE%AE"><span class="nav-number">8.</span> <span class="nav-text">zip:&#x2F;&#x2F;伪协议</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="清者"
+      src="/images/apple-touch-icon-next.png">
+  <p class="site-author-name" itemprop="name">清者</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yourname" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yourname" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/2834849243@qq.com" title="邮箱 → 2834849243@qq.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i>邮箱</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/yourname" title="微博 → https:&#x2F;&#x2F;weibo.com&#x2F;yourname" rel="noopener me" target="_blank"><i class="fab fa-weibo fa-fw"></i>微博</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/yourname" title="CSDN → https:&#x2F;&#x2F;twitter.com&#x2F;yourname" rel="noopener me" target="_blank"><i class="fab fa-twitter fa-fw"></i>CSDN</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/21/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E4%BC%AA%E5%8D%8F%E8%AE%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/apple-touch-icon-next.png">
+      <meta itemprop="name" content="清者">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The future is promising">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="文件包含伪协议 | The future is promising">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          文件包含伪协议
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-01-21 17:55:29 / 修改时间：18:51:20" itemprop="dateCreated datePublished" datetime="2023-01-21T17:55:29+08:00">2023-01-21</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="File-为协议"><a href="#File-为协议" class="headerlink" title="File://为协议"></a>File://为协议</h2><p>(1)file://一用于访问本地文件系统<br>(2)php版本：5.0以上<br>(3)是PHP使用的默认封装协议<br>(4)当指定了一个相对路径(不以/、\、\或Windows盘符开头的路径)提供的路径将基于当前的工作目录<br>受allow_url_fopen影响 No<br>允许读取  Yes<br>允许写入  Yes<br>允许添加  Yes<br>允许同时读和写  Yes</p>
+<h2 id="php-filter伪协议"><a href="#php-filter伪协议" class="headerlink" title="php://filter伪协议"></a>php://filter伪协议</h2><p>(1)php://filter 伪协议用于数据流打开时的筛选过滤应用<br>(2)php://filter类似于readfile()、file_get_contents()，在数据流内容读取之前没有机会应用其他过滤器<br>(3)php版本：5.0以上<br>(4)该协议语法为：php://filter:/<action>=<name><br>php://filter参数<br>resource=&lt;要过滤的数据流    这个参数是必须的。它指定了你要筛选过滤的数据流。<br>read=&lt;读链的筛选列表&gt;       该参数可选。可以设定一个或多个过滤器名称，以管道符(/)分隔。<br>write=&lt;写链的筛选列表&gt;      该参数可选。可以设定一个或多个过滤器名称，以管道符(/)分隔。<br>&lt;；两个链的筛选列表&gt;        任何没有以read=或write=作前缀的筛选器列表会视情况应用于读或写链。<br>(5)php://filter的参数列表<br>参数            功能<br>read            读取<br>write           写入<br>resource        数据来源<br>(6)read参数值可为<br>string.strip_tags:将数据流中的所有html标签清除<br>string.toupper：将数据流中的内容转换为大写<br>string,tolower:将数据流中的内容转换为小写<br>convert.base64-encode：将数据流中的内容转换为base64编码<br>(7)利用方式：<br>php://filter/read=convert.base64-encode/resource=phpinfo.txt</p>
+<h2 id="php-input伪协议"><a href="#php-input伪协议" class="headerlink" title="php://input伪协议"></a>php://input伪协议</h2><p>(1)php://input是个可以访问请求的原始数据的只读流。<br>(2) 利用条件<br>allow_url_fopen 不做要求，allow_url_include=On<br>(3)利用姿势：<br>POST以下数据：<?php fputs(fopen('shell.php','w'),'<?php @eval($_POST[cmd])?>‘);?&gt;<br>封装协议摘要(针对 php://filter，参考被筛选的封装器。)<br>受限于 allow_url_fopen     No<br>受限于 allow_url_include 仅php://input、 php://stdin、php://memory和php://temp。</p>
+<h2 id="data-伪协议"><a href="#data-伪协议" class="headerlink" title="data://伪协议"></a>data://伪协议</h2><p>(1)data:// 一 数据<br>(2)使用版本：PHP 5.2.0起 data：数据流封装器开始有效。<br>(3)用法：<br>data://text/plain,<?php phpinfo();?><br>data://text/plain;base64, PD9waHAgcGhwaW5mbygpOyA/Pg==<br>封装协议摘要<br>受限于allow_url_fopen      No<br>受限于allow_url_include    Yes<br>允许读取                   Yes<br>允许写入                   No</p>
+<h2 id="http-伪协议"><a href="#http-伪协议" class="headerlink" title="http://伪协议"></a>http://伪协议</h2><p>(1)<a target="_blank" rel="noopener" href="http://--https//-%E8%AE%BF%E9%97%AEHTTP(s)%E7%BD%91%E5%9D%80">http://--https://-访问HTTP(s)网址</a><br>(2)允许通过HTTP1.0的GET方法，以只读访问文件或资源。<br>(3)HTTP请求会附带一个 Host:头，用于兼容基于域名的虚拟主机。如果在你的php.ini文件中或字节流上下文(context)配置了user_agent字符串，它也会被包含在请求之中。<br>封装协议概要<br>受allow_url_fopen 限制             Yes<br>允许读取                           Yes<br>允许写入                           No<br>允许添加                           No<br>用法<br><a href="http://example.com/">http://example.com</a><br><a href="http://example.com/file.php?varl=vall&amp;var2=val2">http://example.com/file.php?varl=vall&amp;var2=val2</a><br><a href="http://user:password@example.com/">http://user:password@example.com</a><br><a href="https://example.com/">https://example.com</a><br><a href="https://example.com/file.php?varl=vall&amp;var2=val2">https://example.com/file.php?varl=vall&amp;var2=val2</a><br><a href="https://user:password@example.com/">https://user:password@example.com</a></p>
+<h2 id="ftp-伪协议"><a href="#ftp-伪协议" class="headerlink" title="ftp://伪协议"></a>ftp://伪协议</h2><p>(1)<a href="ftp://--ftps//">ftp://--ftps://</a> - 访问 FTP(s) URLs<br>(2)允许通过FTP读取存在的文件，以及创建新文件。<br>(3)如果服务器不支持被动(passive)模式的FTP，连接会失败。<br>(4)打开文件后你既可以读也可以写，但是不能同时进行。<br>(5)版本：php4.3以上<br>(6)PHP 5.0.0起文件可以通过<a href="ftp://url封装器来追加(append).在之前的版本,尝试通过ftp//%E6%9D%A5%E8%BF%BD%E5%8A%A0%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E5%B0%86%E4%BC%9A%E5%AF%BC%E8%87%B4%E9%94%99%E8%AF%AF%E3%80%82">ftp://URL封装器来追加(append)。在之前的版本，尝试通过ftp://来追加一个文件将会导致错误。</a><br>用法<br>(1)&gt;<a href="ftp://example.com/pub/file.txt">ftp://example.com/pub/file.txt</a><br>(2)<a href="ftp://user:password@example.com/pub/file.txt">ftp://user:password@example.com/pub/file.txt</a><br>(3)ftps://example.com/pub/file.txt<br>(4)ftps://user:<a href="mailto:&#x70;&#x61;&#115;&#x73;&#119;&#x6f;&#x72;&#100;&#x40;&#101;&#120;&#97;&#x6d;&#x70;&#x6c;&#101;&#x2e;&#x63;&#111;&#109;">&#x70;&#x61;&#115;&#x73;&#119;&#x6f;&#x72;&#100;&#x40;&#101;&#120;&#97;&#x6d;&#x70;&#x6c;&#101;&#x2e;&#x63;&#111;&#109;</a>/pub/file.txt<br>封装协议概要<br>属性                                  PHP 4               PHP 5<br>受allow_url_fopen影响                 Yes                 Yes<br>允许读取                              Yes                 Yes<br>允许写入                              Yes (仅支持新文件)   Yes(新文件/启用overwrite 后已存在的文件)<br>允许添加                              No                  Yes</p>
+<h2 id="phar"><a href="#phar" class="headerlink" title="phar"></a>phar</h2><h3 id="phar介绍"><a href="#phar介绍" class="headerlink" title="phar介绍"></a>phar介绍</h3><p>(1)phar协议的作用是归档，自PHP5.3.0起开始有效<br>(2)Phar归档文件最有特色的特点是可以方便地将多个文件分组为一个文件。这样，phar归档文件提供了一种将完整的PHP应用程序分发到单个文件中并从该文件运行它的方法，而无需将其提取到磁盘中。<br>(3)phar 可以处理 tar、zip和phar文件<br>封装协议摘要<br>支持allow_url_fopen                 No<br>支持allow_url_include               No<br>允许读取                            Yes<br>允许写入                            Yes</p>
+<h3 id="phar伪协议的利用方式"><a href="#phar伪协议的利用方式" class="headerlink" title="phar伪协议的利用方式"></a>phar伪协议的利用方式</h3><p>phar://phpinfo.zip/phpinfo.txt<br>注意事项：<br>(1)压缩包中文件的名字要和后面的一样<br>(2)压缩包在压缩后还可以改后缀名<br>其他归档压缩类扩展<br>Bzip2、zip、LZF等<br>zlib://– bzip2://-vzip://—压缩流<br>compress.zlib://file.gz<br>compress.bzip2://file.bz2<br>zip://archive.zip#dir/file.txt</p>
+<h2 id="zip-伪协议"><a href="#zip-伪协议" class="headerlink" title="zip://伪协议"></a>zip://伪协议</h2><p>(1)使用条件：<br>PHP&gt; =5.3.0，注意在windows下测试php要5.3.0~5.4才可以。在浏览器中要编码为%23，否则浏览器默认不会传输特殊字符。<br>(2)利用方式：<br>zip://[压缩文件绝对路径]#[压缩文件内的子文件名]<br>zip://xxx.zip#shell.txt<br>zip://xxx.png#shell.php</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/01/20/sql%E6%B3%A8%E5%85%A5%E4%B9%8B%E5%B8%B8%E8%A7%81%E7%BB%95%E8%BF%87%E6%96%B9%E5%BC%8F/" rel="prev" title="sql注入之常见绕过方式">
+                  <i class="fa fa-chevron-left"></i> sql注入之常见绕过方式
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+<!---->
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">清者</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"live2d-widget-model-shizuku"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html>
