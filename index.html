@@ -149,7 +149,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -185,6 +185,85 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/26/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/apple-touch-icon-next.png">
+      <meta itemprop="name" content="清者">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The future is promising">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | The future is promising">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/01/26/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" class="post-title-link" itemprop="url">文件包含</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-01-26 17:43:34 / 修改时间：18:17:20" itemprop="dateCreated datePublished" datetime="2023-01-26T17:43:34+08:00">2023-01-26</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="文件包含-php"><a href="#文件包含-php" class="headerlink" title="文件包含-php"></a>文件包含-php</h2><p>(1)任意目录任意文件可被包含(和aspx类似) （前提：有文件读取权限）<br>(2)可以动态包含</p>
+<h2 id="文件包含-jsp"><a href="#文件包含-jsp" class="headerlink" title="文件包含-jsp"></a>文件包含-jsp</h2><p>(1)JSP文件包含函数：java.io.file()、java.io.filereader()、静动态include<br>(2) 静态包含：&lt;%@ include file=”1.jsp”%&gt;<br>(3)动态包含：<br>&lt;% String name = request.getParameter(“name”);%&gt;<br>&lt;jsp:include page=”&lt;%=name%&gt;”/&gt;<br>注：<br>(1)静态包含是不支持变量赋值的，只能包含指定的文本文件。<br>(2)动态包含仅支持包含web路径下的 jsp文件。 (像绝对路径、非web路径、非jsp，文件包含通通失败)<br>(3)留后门还是一种利用方式。</p>
+<h2 id="文件包含-aspx"><a href="#文件包含-aspx" class="headerlink" title="文件包含-aspx"></a>文件包含-aspx</h2><p>文件包含-ASPX 云演|让攻防更简单<br>03 aspx能否文件包含致代码执行？需要什么条件？<br>(1) aspx文件包含函数：include file、include virtual<br>(2)静态包含：<br>!–#include file=”top.aspx” -&gt;<br>!– #include virtual =”header.inc” -&gt;<br>前面加上&lt;<br>注：<br>(1)aspx不支持动态包含，asp一样不支持动态包含。<br>(2)任意自录任意文件可被包含，可以把内容当做aspx代码执行<br>(3)留后门是一种利用方式。</p>
+<h2 id="文件包含常用函数"><a href="#文件包含常用函数" class="headerlink" title="文件包含常用函数"></a>文件包含常用函数</h2><p>include(),require(),fopen(),include_once(),require_once(),readfile()<br>区别:<br>(1) include(),require()<br>当包含一个不存在的文件时，include会报错，但是下面的语句正常执行，而require就会报错并停止脚步继续执行。<br>(2) include_once(),require_once()<br>当之前包含过一个文件时，就不会再包含了<br>(3) fopen(),readfile()<br>前者返回的是一个指针，后者功能是读取一个文件到缓冲区，返回一个整数(为文件的内字符的长度)</p>
+<h2 id="本地文件包含漏洞"><a href="#本地文件包含漏洞" class="headerlink" title="本地文件包含漏洞"></a>本地文件包含漏洞</h2><p>注意事项<br>(1) 两个文件在同一目录下<br>(2) 若不在同一目录，包含的文件路径必须写相对路径或绝对路径<br>(3) 被包含的页面的后缀无论是什么都会当作php解析<br>示例1<br>(1) 程序没有对要包含的文件进行验证，导致可控<br>(2) 因为文件路径可控，当输入其他文件的所在路径，内容就会输出出来。<br>示例2<br>由于示例01中的代码过于危险，所以就很少有人这么写，会加防护，但有些防护措施还是很差，例如只是通过替换../防止遍历目录。<br>示例3<br>也有采用在包含的文件末尾添加后缀的方式进行防护。</p>
+<h2 id="远程文件包含"><a href="#远程文件包含" class="headerlink" title="远程文件包含"></a>远程文件包含</h2><h3 id="远程文件包含漏洞"><a href="#远程文件包含漏洞" class="headerlink" title="远程文件包含漏洞"></a>远程文件包含漏洞</h3><p>远程文件包含漏洞(RFI)，它其实也属于“代码注入”的一种，其原理就是注入一段用户能控制的脚本或代码，并让其在服务端执行。</p>
+<h3 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h3><p>(1) allow_urlL_fopen ON (默认ON)<br>(2) allow_url_include ON (默认OFF)<br>(3)被包含的变量前没有目录的限制</p>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>(1)远程包含文件路径必须为绝对路径<br>(2)被包含的文件不能够被服务器解析，如php文件</p>
+<h3 id="文件包含漏洞防御"><a href="#文件包含漏洞防御" class="headerlink" title="文件包含漏洞防御"></a>文件包含漏洞防御</h3><p>(1)不要直接导入用户输入的内容(本地与远程文件包含漏洞相同)做好过滤<br>(2)路径限制：限制被包含的文件只能在某一目录内，并且一定要禁止目录跳转；开启 open_basedir函数，只允许用户访问web目录，可以防止包含其他目录的文件。<br>(3)做好文件的权限管理，等。</p>
+<h3 id="读取敏感文件"><a href="#读取敏感文件" class="headerlink" title="读取敏感文件"></a>读取敏感文件</h3><p>Windows<br>(1)c:\boot.ini//查看系统版本<br>(2)c:windows\system32\inetsrv\MetaBase.xml// IIS配置文件<br>(3)c:windows\repair\sam//存储Windows系统初次安装的密码<br>(4)c:\ProgramFiles\mysql\my.ini // MySQL配置<br>(5)c:\ProgramFiles\mysql\data\mysq/\user.MYD // MySQL root密码<br>(6)c:windows\php.ini// php配置信息<br>Linux<br>(1)/etc/passwd//账户信息<br>(2)/etc/shadow//账户密码文件<br>(3)/usr/local/app/apache2/conf/httpd.conf// Apache2默认配置文件<br>(4)/usr/local/app/apache2/conf/extra/httpd-vhost.conf//虚拟网站配置<br>(5)/usr/local/app/php5/lib/php.ini//PHP相关配置<br>(6)/etc/httpd/conf/httpd.conf// Apache配置文件<br>(7) /etc/my.conf // mysql 配置文件</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -320,7 +399,7 @@
 <h2 id="php-input伪协议"><a href="#php-input伪协议" class="headerlink" title="php://input伪协议"></a>php://input伪协议</h2><p>(1)php://input是个可以访问请求的原始数据的只读流。<br>(2) 利用条件<br>allow_url_fopen 不做要求，allow_url_include=On<br>(3)利用姿势：<br>POST以下数据：<?php fputs(fopen('shell.php','w'),'<?php @eval($_POST[cmd])?>‘);?&gt;<br>封装协议摘要(针对 php://filter，参考被筛选的封装器。)<br>受限于 allow_url_fopen     No<br>受限于 allow_url_include 仅php://input、 php://stdin、php://memory和php://temp。</p>
 <h2 id="data-伪协议"><a href="#data-伪协议" class="headerlink" title="data://伪协议"></a>data://伪协议</h2><p>(1)data:// 一 数据<br>(2)使用版本：PHP 5.2.0起 data：数据流封装器开始有效。<br>(3)用法：<br>data://text/plain,<?php phpinfo();?><br>data://text/plain;base64, PD9waHAgcGhwaW5mbygpOyA/Pg==<br>封装协议摘要<br>受限于allow_url_fopen      No<br>受限于allow_url_include    Yes<br>允许读取                   Yes<br>允许写入                   No</p>
 <h2 id="http-伪协议"><a href="#http-伪协议" class="headerlink" title="http://伪协议"></a>http://伪协议</h2><p>(1)<a target="_blank" rel="noopener" href="http://--https//-%E8%AE%BF%E9%97%AEHTTP(s)%E7%BD%91%E5%9D%80">http://--https://-访问HTTP(s)网址</a><br>(2)允许通过HTTP1.0的GET方法，以只读访问文件或资源。<br>(3)HTTP请求会附带一个 Host:头，用于兼容基于域名的虚拟主机。如果在你的php.ini文件中或字节流上下文(context)配置了user_agent字符串，它也会被包含在请求之中。<br>封装协议概要<br>受allow_url_fopen 限制             Yes<br>允许读取                           Yes<br>允许写入                           No<br>允许添加                           No<br>用法<br><a href="http://example.com/">http://example.com</a><br><a href="http://example.com/file.php?varl=vall&amp;var2=val2">http://example.com/file.php?varl=vall&amp;var2=val2</a><br><a href="http://user:password@example.com/">http://user:password@example.com</a><br><a href="https://example.com/">https://example.com</a><br><a href="https://example.com/file.php?varl=vall&amp;var2=val2">https://example.com/file.php?varl=vall&amp;var2=val2</a><br><a href="https://user:password@example.com/">https://user:password@example.com</a></p>
-<h2 id="ftp-伪协议"><a href="#ftp-伪协议" class="headerlink" title="ftp://伪协议"></a>ftp://伪协议</h2><p>(1)<a href="ftp://--ftps//">ftp://--ftps://</a> - 访问 FTP(s) URLs<br>(2)允许通过FTP读取存在的文件，以及创建新文件。<br>(3)如果服务器不支持被动(passive)模式的FTP，连接会失败。<br>(4)打开文件后你既可以读也可以写，但是不能同时进行。<br>(5)版本：php4.3以上<br>(6)PHP 5.0.0起文件可以通过<a href="ftp://url封装器来追加(append).在之前的版本,尝试通过ftp//%E6%9D%A5%E8%BF%BD%E5%8A%A0%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E5%B0%86%E4%BC%9A%E5%AF%BC%E8%87%B4%E9%94%99%E8%AF%AF%E3%80%82">ftp://URL封装器来追加(append)。在之前的版本，尝试通过ftp://来追加一个文件将会导致错误。</a><br>用法<br>(1)&gt;<a href="ftp://example.com/pub/file.txt">ftp://example.com/pub/file.txt</a><br>(2)<a href="ftp://user:password@example.com/pub/file.txt">ftp://user:password@example.com/pub/file.txt</a><br>(3)ftps://example.com/pub/file.txt<br>(4)ftps://user:<a href="mailto:&#x70;&#97;&#115;&#115;&#x77;&#111;&#x72;&#x64;&#64;&#101;&#120;&#x61;&#x6d;&#112;&#108;&#101;&#x2e;&#x63;&#x6f;&#109;">&#x70;&#97;&#115;&#115;&#x77;&#111;&#x72;&#x64;&#64;&#101;&#120;&#x61;&#x6d;&#112;&#108;&#101;&#x2e;&#x63;&#x6f;&#109;</a>/pub/file.txt<br>封装协议概要<br>属性                                  PHP 4               PHP 5<br>受allow_url_fopen影响                 Yes                 Yes<br>允许读取                              Yes                 Yes<br>允许写入                              Yes (仅支持新文件)   Yes(新文件/启用overwrite 后已存在的文件)<br>允许添加                              No                  Yes</p>
+<h2 id="ftp-伪协议"><a href="#ftp-伪协议" class="headerlink" title="ftp://伪协议"></a>ftp://伪协议</h2><p>(1)<a href="ftp://--ftps//">ftp://--ftps://</a> - 访问 FTP(s) URLs<br>(2)允许通过FTP读取存在的文件，以及创建新文件。<br>(3)如果服务器不支持被动(passive)模式的FTP，连接会失败。<br>(4)打开文件后你既可以读也可以写，但是不能同时进行。<br>(5)版本：php4.3以上<br>(6)PHP 5.0.0起文件可以通过<a href="ftp://url封装器来追加(append).在之前的版本,尝试通过ftp//%E6%9D%A5%E8%BF%BD%E5%8A%A0%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E5%B0%86%E4%BC%9A%E5%AF%BC%E8%87%B4%E9%94%99%E8%AF%AF%E3%80%82">ftp://URL封装器来追加(append)。在之前的版本，尝试通过ftp://来追加一个文件将会导致错误。</a><br>用法<br>(1)&gt;<a href="ftp://example.com/pub/file.txt">ftp://example.com/pub/file.txt</a><br>(2)<a href="ftp://user:password@example.com/pub/file.txt">ftp://user:password@example.com/pub/file.txt</a><br>(3)ftps://example.com/pub/file.txt<br>(4)ftps://user:<a href="mailto:&#x70;&#97;&#115;&#115;&#119;&#x6f;&#x72;&#x64;&#64;&#101;&#x78;&#x61;&#x6d;&#x70;&#108;&#101;&#46;&#x63;&#x6f;&#109;">&#x70;&#97;&#115;&#115;&#119;&#x6f;&#x72;&#x64;&#64;&#101;&#x78;&#x61;&#x6d;&#x70;&#108;&#101;&#46;&#x63;&#x6f;&#109;</a>/pub/file.txt<br>封装协议概要<br>属性                                  PHP 4               PHP 5<br>受allow_url_fopen影响                 Yes                 Yes<br>允许读取                              Yes                 Yes<br>允许写入                              Yes (仅支持新文件)   Yes(新文件/启用overwrite 后已存在的文件)<br>允许添加                              No                  Yes</p>
 <h2 id="phar"><a href="#phar" class="headerlink" title="phar"></a>phar</h2><h3 id="phar介绍"><a href="#phar介绍" class="headerlink" title="phar介绍"></a>phar介绍</h3><p>(1)phar协议的作用是归档，自PHP5.3.0起开始有效<br>(2)Phar归档文件最有特色的特点是可以方便地将多个文件分组为一个文件。这样，phar归档文件提供了一种将完整的PHP应用程序分发到单个文件中并从该文件运行它的方法，而无需将其提取到磁盘中。<br>(3)phar 可以处理 tar、zip和phar文件<br>封装协议摘要<br>支持allow_url_fopen                 No<br>支持allow_url_include               No<br>允许读取                            Yes<br>允许写入                            Yes</p>
 <h3 id="phar伪协议的利用方式"><a href="#phar伪协议的利用方式" class="headerlink" title="phar伪协议的利用方式"></a>phar伪协议的利用方式</h3><p>phar://phpinfo.zip/phpinfo.txt<br>注意事项：<br>(1)压缩包中文件的名字要和后面的一样<br>(2)压缩包在压缩后还可以改后缀名<br>其他归档压缩类扩展<br>Bzip2、zip、LZF等<br>zlib://– bzip2://-vzip://—压缩流<br>compress.zlib://file.gz<br>compress.bzip2://file.bz2<br>zip://archive.zip#dir/file.txt</p>
 <h2 id="zip-伪协议"><a href="#zip-伪协议" class="headerlink" title="zip://伪协议"></a>zip://伪协议</h2><p>(1)使用条件：<br>PHP&gt; =5.3.0，注意在windows下测试php要5.3.0~5.4才可以。在浏览器中要编码为%23，否则浏览器默认不会传输特殊字符。<br>(2)利用方式：<br>zip://[压缩文件绝对路径]#[压缩文件内的子文件名]<br>zip://xxx.zip#shell.txt<br>zip://xxx.png#shell.php</p>
