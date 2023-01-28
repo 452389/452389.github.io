@@ -19,27 +19,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="floor报错注入rand(0)与rand()的区别rand(0)相当于给rand()函数传递了一个参数然后rand()函数会根据0这个参数进行随机数生成rand()生成的数字是完全随机的,而rand(0)是有规律的生成 count(*)的作用count()是用来统计表中记录的一个函数,返回匹配条件的行数count(*)包含所有列,返回表中记录数,相当于统计表中的行数 group by的作用gro">
+    <meta name="description" content="指定后缀(1)00截断（需要php版本小于5.3.8以及magic_quotes_gpc&#x3D;off）(2)路径长度截断（需要达到一定长度）    点号截断（只适用于windows） (php版本 5.2.17、magic_quotes_gpc&#x3D;On)例：index.php?file&#x3D;phpinfo.php………..    .&#x2F;截断（php版本5.2.17，magic_quotes_gpc&#x3D;on)例：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sql注入之报错注入">
-<meta property="og:url" content="http://example.com/2023/01/14/sql%E6%B3%A8%E5%85%A5%E4%B9%8B%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5/index.html">
+<meta property="og:title" content="文件包含漏洞其他利用方式">
+<meta property="og:url" content="http://example.com/2023/01/28/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%E5%85%B6%E4%BB%96%E5%88%A9%E7%94%A8%E6%96%B9%E5%BC%8F/index.html">
 <meta property="og:site_name" content="The future is promising">
-<meta property="og:description" content="floor报错注入rand(0)与rand()的区别rand(0)相当于给rand()函数传递了一个参数然后rand()函数会根据0这个参数进行随机数生成rand()生成的数字是完全随机的,而rand(0)是有规律的生成 count(*)的作用count()是用来统计表中记录的一个函数,返回匹配条件的行数count(*)包含所有列,返回表中记录数,相当于统计表中的行数 group by的作用gro">
+<meta property="og:description" content="指定后缀(1)00截断（需要php版本小于5.3.8以及magic_quotes_gpc&#x3D;off）(2)路径长度截断（需要达到一定长度）    点号截断（只适用于windows） (php版本 5.2.17、magic_quotes_gpc&#x3D;On)例：index.php?file&#x3D;phpinfo.php………..    .&#x2F;截断（php版本5.2.17，magic_quotes_gpc&#x3D;on)例：">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-01-14T10:29:18.000Z">
-<meta property="article:modified_time" content="2023-01-14T11:38:57.264Z">
+<meta property="article:published_time" content="2023-01-28T10:32:00.000Z">
+<meta property="article:modified_time" content="2023-01-28T10:47:32.530Z">
 <meta property="article:author" content="清者">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2023/01/14/sql%E6%B3%A8%E5%85%A5%E4%B9%8B%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5/">
+<link rel="canonical" href="http://example.com/2023/01/28/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%E5%85%B6%E4%BB%96%E5%88%A9%E7%94%A8%E6%96%B9%E5%BC%8F/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/01/14/sql%E6%B3%A8%E5%85%A5%E4%B9%8B%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5/","path":"2023/01/14/sql注入之报错注入/","title":"sql注入之报错注入"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/01/28/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%E5%85%B6%E4%BB%96%E5%88%A9%E7%94%A8%E6%96%B9%E5%BC%8F/","path":"2023/01/28/文件包含漏洞其他利用方式/","title":"文件包含漏洞其他利用方式"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>sql注入之报错注入 | The future is promising</title>
+<title>文件包含漏洞其他利用方式 | The future is promising</title>
   
 
 
@@ -139,7 +139,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#floor%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5"><span class="nav-number">1.</span> <span class="nav-text">floor报错注入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#rand-0-%E4%B8%8Erand-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.1.</span> <span class="nav-text">rand(0)与rand()的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#count-%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">1.2.</span> <span class="nav-text">count(*)的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#group-by%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">1.3.</span> <span class="nav-text">group by的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B"><span class="nav-number">1.4.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#extractvalue%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5"><span class="nav-number">2.</span> <span class="nav-text">extractvalue报错注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#updatexml%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5"><span class="nav-number">3.</span> <span class="nav-text">updatexml报错注入</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E5%AE%9A%E5%90%8E%E7%BC%80"><span class="nav-number">1.</span> <span class="nav-text">指定后缀</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%85%E5%90%ABweb%E6%97%A5%E5%BF%97getshell"><span class="nav-number">2.</span> <span class="nav-text">包含web日志getshell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%85%E5%90%ABsession%E6%96%87%E4%BB%B6getshell"><span class="nav-number">3.</span> <span class="nav-text">包含session文件getshell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%85%E5%90%ABsession%E6%96%87%E4%BB%B6qetshell"><span class="nav-number">4.</span> <span class="nav-text">包含session文件qetshell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%85%E5%90%AB-proc-self-environ%E6%96%87%E4%BB%B6-getshell"><span class="nav-number">5.</span> <span class="nav-text">包含&#x2F;proc&#x2F;self&#x2F;environ文件 getshell</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -200,7 +200,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/14/sql%E6%B3%A8%E5%85%A5%E4%B9%8B%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/28/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%E5%85%B6%E4%BB%96%E5%88%A9%E7%94%A8%E6%96%B9%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/apple-touch-icon-next.png">
@@ -213,12 +213,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="sql注入之报错注入 | The future is promising">
+      <meta itemprop="name" content="文件包含漏洞其他利用方式 | The future is promising">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          sql注入之报错注入
+          文件包含漏洞其他利用方式
         </h1>
 
         <div class="post-meta-container">
@@ -230,7 +230,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-01-14 18:29:18 / 修改时间：19:38:57" itemprop="dateCreated datePublished" datetime="2023-01-14T18:29:18+08:00">2023-01-14</time>
+      <time title="创建时间：2023-01-28 18:32:00 / 修改时间：18:47:32" itemprop="dateCreated datePublished" datetime="2023-01-28T18:32:00+08:00">2023-01-28</time>
     </span>
 
   
@@ -243,12 +243,11 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="floor报错注入"><a href="#floor报错注入" class="headerlink" title="floor报错注入"></a>floor报错注入</h2><h3 id="rand-0-与rand-的区别"><a href="#rand-0-与rand-的区别" class="headerlink" title="rand(0)与rand()的区别"></a>rand(0)与rand()的区别</h3><p>rand(0)相当于给rand()函数传递了一个参数然后rand()函数会根据0这个参数进行随机数生成<br>rand()生成的数字是完全随机的,而rand(0)是有规律的生成</p>
-<h3 id="count-的作用"><a href="#count-的作用" class="headerlink" title="count(*)的作用"></a>count(*)的作用</h3><p>count()是用来统计表中记录的一个函数,返回匹配条件的行数<br>count(*)包含所有列,返回表中记录数,相当于统计表中的行数</p>
-<h3 id="group-by的作用"><a href="#group-by的作用" class="headerlink" title="group by的作用"></a>group by的作用</h3><p>group by是用来进行分组查询的。对指定列的查询结果做分组统计，最终得到一个分组汇总表</p>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>id=1’ and  (select count(*),floor(rand(0)<em>2)as a from information_schema.tables group by a)– -<br>id=1’ and (select 1 from(select count(</em>),floor(rand(0)*2)as a from information_schema.tables group by a))– -<br>其中floor(rand(0)<em>2)会生成一个011011的序列，而且每次运行的时候都不变<br>所以count(</em>),floor(rand(0)*2)as a from users group by a运行的时候，第一次拿到的group by后面的值是0，在虚拟表中不存在，所以要再运算一次来获取group by后面的值，这时候获取的值是1<br>所以group by要进行两次运算</p>
-<h2 id="extractvalue报错注入"><a href="#extractvalue报错注入" class="headerlink" title="extractvalue报错注入"></a>extractvalue报错注入</h2><p>extractvalue(XML_document,XPath_string)<br>第一个参数：XML_document是string格式，为XML文档对象的名称，表示传入的目标XML文档<br>第二个参数：XPath_string(Xpath格式的字符串)，表示xml路径<br>作用：从目标XML中返回包含所查询的字符串<br>例：id=1 and (extractvalue(1,concat((select database()))))<br>    id=1 and (extractvalue(1,concat(‘~’,(select database()))))<br>    id=1 and (extractvalue(1,concat(‘/‘,(select database()))))</p>
-<h2 id="updatexml报错注入"><a href="#updatexml报错注入" class="headerlink" title="updatexml报错注入"></a>updatexml报错注入</h2><p>updatexml(XML_document,XPath_string,new_value)<br>第一个参数：XML_document是string格式，为XML文档对象的名称，文中为Doc<br>第二个参数：XPath_string(Xpath格式的字符串)<br>第三个参数：new_value,string格式，替换查找到的符合条件的数据<br>函数作用：改变文档中符合条件的节点的值</p>
+        <h2 id="指定后缀"><a href="#指定后缀" class="headerlink" title="指定后缀"></a>指定后缀</h2><p>(1)00截断（需要php版本小于5.3.8以及magic_quotes_gpc=off）<br>(2)路径长度截断（需要达到一定长度）<br>    点号截断（只适用于windows） (php版本 5.2.17、magic_quotes_gpc=On)例：index.php?file=phpinfo.php………..<br>    ./截断（php版本5.2.17，magic_quotes_gpc=on)例：index.php?file=phpinfo.php./././././././././././././././././</p>
+<h2 id="包含web日志getshell"><a href="#包含web日志getshell" class="headerlink" title="包含web日志getshell"></a>包含web日志getshell</h2><p>(1)把一句话木马写入日志中，然后直接包含日志即可getshell<br>注：直接浏览器请求的代码到日志，会URL编码，导致PHP不会正常执行；所以需要通过burpsuite 辅助</p>
+<h2 id="包含session文件getshell"><a href="#包含session文件getshell" class="headerlink" title="包含session文件getshell"></a>包含session文件getshell</h2><p>(1)示例代码如下：<br>我们可以通过GET方法向session文件里传入以下恶意代码：<br>Session文件名的命名规则：sess_PHPSESSID<br>PHPSESSID的获取方法：F12查看即可。</p>
+<h2 id="包含session文件qetshell"><a href="#包含session文件qetshell" class="headerlink" title="包含session文件qetshell"></a>包含session文件qetshell</h2><p>怎么找session文件的路径<br>(1)通过phpinfo获取<br>(2)session文件常见的存在位置<br>/var/lib/php/sess_PHPSESSID<br>/tmp/sess_PHPSESSID<br>/tmp/sessions/sess_PHPSESSID</p>
+<h2 id="包含-proc-self-environ文件-getshell"><a href="#包含-proc-self-environ文件-getshell" class="headerlink" title="包含/proc/self/environ文件 getshell"></a>包含/proc/self/environ文件 getshell</h2><p>1、利用条件<br>(1)php以cgi方式运行，这样environ才会保存UA头<br>(2)environ文件存储位置已知，且environ文件可读<br>2、姿势<br>proc/self/environ中会保存user-agent头。如果在user-agent中插入php代码，则php代码会被写入到environ中。之后再包含它，即可。</p>
 
     </div>
 
@@ -262,14 +261,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/01/13/sql%E6%89%8B%E5%B7%A5%E6%B3%A8%E5%85%A5/" rel="prev" title="sql 手工注入">
-                  <i class="fa fa-chevron-left"></i> sql 手工注入
+                <a href="/2023/01/27/xss%E6%BC%8F%E6%B4%9E/" rel="prev" title="xss漏洞">
+                  <i class="fa fa-chevron-left"></i> xss漏洞
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/01/20/sql%E6%B3%A8%E5%85%A5%E4%B9%8B%E5%B8%B8%E8%A7%81%E7%BB%95%E8%BF%87%E6%96%B9%E5%BC%8F/" rel="next" title="sql注入之常见绕过方式">
-                  sql注入之常见绕过方式 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
