@@ -27,7 +27,7 @@
 <meta property="og:description" content="指定后缀(1)00截断（需要php版本小于5.3.8以及magic_quotes_gpc&#x3D;off）(2)路径长度截断（需要达到一定长度）    点号截断（只适用于windows） (php版本 5.2.17、magic_quotes_gpc&#x3D;On)例：index.php?file&#x3D;phpinfo.php………..    .&#x2F;截断（php版本5.2.17，magic_quotes_gpc&#x3D;on)例：">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-01-28T10:32:00.000Z">
-<meta property="article:modified_time" content="2023-01-28T10:47:32.530Z">
+<meta property="article:modified_time" content="2023-01-29T11:12:23.577Z">
 <meta property="article:author" content="清者">
 <meta name="twitter:card" content="summary">
 
@@ -139,7 +139,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E5%AE%9A%E5%90%8E%E7%BC%80"><span class="nav-number">1.</span> <span class="nav-text">指定后缀</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%85%E5%90%ABweb%E6%97%A5%E5%BF%97getshell"><span class="nav-number">2.</span> <span class="nav-text">包含web日志getshell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%85%E5%90%ABsession%E6%96%87%E4%BB%B6getshell"><span class="nav-number">3.</span> <span class="nav-text">包含session文件getshell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%85%E5%90%ABsession%E6%96%87%E4%BB%B6qetshell"><span class="nav-number">4.</span> <span class="nav-text">包含session文件qetshell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%85%E5%90%AB-proc-self-environ%E6%96%87%E4%BB%B6-getshell"><span class="nav-number">5.</span> <span class="nav-text">包含&#x2F;proc&#x2F;self&#x2F;environ文件 getshell</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E5%AE%9A%E5%90%8E%E7%BC%80"><span class="nav-number">1.</span> <span class="nav-text">指定后缀</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%85%E5%90%ABweb%E6%97%A5%E5%BF%97getshell"><span class="nav-number">2.</span> <span class="nav-text">包含web日志getshell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%85%E5%90%ABsession%E6%96%87%E4%BB%B6getshell"><span class="nav-number">3.</span> <span class="nav-text">包含session文件getshell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%85%E5%90%ABsession%E6%96%87%E4%BB%B6getshell-1"><span class="nav-number">4.</span> <span class="nav-text">包含session文件getshell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%85%E5%90%AB-proc-self-environ%E6%96%87%E4%BB%B6-getshell"><span class="nav-number">5.</span> <span class="nav-text">包含&#x2F;proc&#x2F;self&#x2F;environ文件 getshell</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -154,7 +154,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -228,9 +228,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2023-01-28 18:32:00 / 修改时间：18:47:32" itemprop="dateCreated datePublished" datetime="2023-01-28T18:32:00+08:00">2023-01-28</time>
+      <time title="创建时间：2023-01-28 18:32:00" itemprop="dateCreated datePublished" datetime="2023-01-28T18:32:00+08:00">2023-01-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-01-29 19:12:23" itemprop="dateModified" datetime="2023-01-29T19:12:23+08:00">2023-01-29</time>
     </span>
 
   
@@ -246,7 +252,7 @@
         <h2 id="指定后缀"><a href="#指定后缀" class="headerlink" title="指定后缀"></a>指定后缀</h2><p>(1)00截断（需要php版本小于5.3.8以及magic_quotes_gpc=off）<br>(2)路径长度截断（需要达到一定长度）<br>    点号截断（只适用于windows） (php版本 5.2.17、magic_quotes_gpc=On)例：index.php?file=phpinfo.php………..<br>    ./截断（php版本5.2.17，magic_quotes_gpc=on)例：index.php?file=phpinfo.php./././././././././././././././././</p>
 <h2 id="包含web日志getshell"><a href="#包含web日志getshell" class="headerlink" title="包含web日志getshell"></a>包含web日志getshell</h2><p>(1)把一句话木马写入日志中，然后直接包含日志即可getshell<br>注：直接浏览器请求的代码到日志，会URL编码，导致PHP不会正常执行；所以需要通过burpsuite 辅助</p>
 <h2 id="包含session文件getshell"><a href="#包含session文件getshell" class="headerlink" title="包含session文件getshell"></a>包含session文件getshell</h2><p>(1)示例代码如下：<br>我们可以通过GET方法向session文件里传入以下恶意代码：<br>Session文件名的命名规则：sess_PHPSESSID<br>PHPSESSID的获取方法：F12查看即可。</p>
-<h2 id="包含session文件qetshell"><a href="#包含session文件qetshell" class="headerlink" title="包含session文件qetshell"></a>包含session文件qetshell</h2><p>怎么找session文件的路径<br>(1)通过phpinfo获取<br>(2)session文件常见的存在位置<br>/var/lib/php/sess_PHPSESSID<br>/tmp/sess_PHPSESSID<br>/tmp/sessions/sess_PHPSESSID</p>
+<h2 id="包含session文件getshell-1"><a href="#包含session文件getshell-1" class="headerlink" title="包含session文件getshell"></a>包含session文件getshell</h2><p>怎么找session文件的路径<br>(1)通过phpinfo获取<br>(2)session文件常见的存在位置<br>/var/lib/php/sess_PHPSESSID<br>/tmp/sess_PHPSESSID<br>/tmp/sessions/sess_PHPSESSID</p>
 <h2 id="包含-proc-self-environ文件-getshell"><a href="#包含-proc-self-environ文件-getshell" class="headerlink" title="包含/proc/self/environ文件 getshell"></a>包含/proc/self/environ文件 getshell</h2><p>1、利用条件<br>(1)php以cgi方式运行，这样environ才会保存UA头<br>(2)environ文件存储位置已知，且environ文件可读<br>2、姿势<br>proc/self/environ中会保存user-agent头。如果在user-agent中插入php代码，则php代码会被写入到environ中。之后再包含它，即可。</p>
 
     </div>
@@ -266,6 +272,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2023/01/29/web%E5%85%A5%E9%97%A878-81/" rel="next" title="web入门78-81">
+                  web入门78-81 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
