@@ -149,7 +149,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -185,6 +185,226 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/12/web%E5%85%A5%E9%97%A897-99/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/apple-touch-icon-next.png">
+      <meta itemprop="name" content="清者">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The future is promising">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | The future is promising">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/02/12/web%E5%85%A5%E9%97%A897-99/" class="post-title-link" itemprop="url">web入门97-99</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-02-12 13:29:03 / 修改时间：13:56:06" itemprop="dateCreated datePublished" datetime="2023-02-12T13:29:03+08:00">2023-02-12</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="web97"><a href="#web97" class="headerlink" title="web97"></a>web97</h2><p>include(“flag.php”);<br>highlight_file(<strong>FILE</strong>);<br>if (isset($_POST[‘a’]) and isset($_POST[‘b’])) {<br>if ($_POST[‘a’] != $_POST[‘b’])<br>if (md5($_POST[‘a’]) === md5($_POST[‘b’]))<br>echo $flag;<br>else<br>print ‘Wrong.’;<br>该题是要满足a不等于b，但是二者的MD5值要相同。<br>因为MD5不能处理数组，处理数组会返回空(null)，所以只要让a和b为不同的数组即可，所以：<br>用post传a[]=1&amp;b[]=2即可</p>
+<h2 id="web98"><a href="#web98" class="headerlink" title="web98"></a>web98</h2><p>include(“flag.php”);<br>$_GET?$_GET=&amp;$_POST:’flag’;<br>$_GET[‘flag’]==’flag’?$_GET=&amp;$_COOKIE:’flag’;//如果flag变量值为’flag’，则$_GET 变量和$_COOKIE 变量指向同一个地址；否则返回flag<br>$_GET[‘flag’]==’flag’?$_GET=&amp;$_SERVER:’flag’;//如果flag变量值为’flag’，则$_GET 变量和$_SERVER 变量指向同一个地址；否则返回flag<br>highlight_file($_GET[‘HTTP_FLAG’]==’flag’?$flag:<strong>FILE</strong>);<br>第一句的意思是如果存在GET请求则引用POST请求的内容<br>最关键的就是HTTP_FALG=flag，这样才就能回显flag了<br>第一句存在变量覆盖的效果，GET请求不管给什么东西都会被POST请求覆盖掉<br>所以先GET:?flag=1然后在POST:HTTP_FLAG=flag就行了</p>
+<h2 id="web99"><a href="#web99" class="headerlink" title="web99"></a>web99</h2><p>highlight_file(<strong>FILE</strong>);<br> $allow = array();<br>for ($i=0; $i &lt; 0x36d; $i++) {<br>    array_push($allow, rand(0,$i));//array_push()函数向allow数组的尾部添加一个元素，该元素由rand()函数返回一个随机数<br>}<br>if(isset($_GET[‘n’]) &amp;&amp; in_array($_GET[‘n’], $allow)){//传入的参数中要有allow数组中的数字，然后是一个文件包含<br>    file_put_contents($_GET[‘n’], $_POST[‘content’]);<br>}<br>?&gt;<br>文件包含可以用php://filter伪协议，可以使用base64或者rot13，这样包含了数字<br>所以?n=php://filter/write=string%.rot13/resource=sh.php  POST:content=<?cuc flfgrz("gnp *.cuc");?><br>rand() 函数生成随机整数<br>如果您想要一个介于 10 和 100 之间（包括 10 和 100）的随机整数，使用 rand (10,100)</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/12/web%E5%85%A5%E9%97%A893-96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/apple-touch-icon-next.png">
+      <meta itemprop="name" content="清者">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The future is promising">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | The future is promising">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/02/12/web%E5%85%A5%E9%97%A893-96/" class="post-title-link" itemprop="url">web入门93-96</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-02-12 11:58:16 / 修改时间：13:25:13" itemprop="dateCreated datePublished" datetime="2023-02-12T11:58:16+08:00">2023-02-12</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="web93"><a href="#web93" class="headerlink" title="web93"></a>web93</h2><p>include(“flag.php”);<br>highlight_file(<strong>FILE</strong>);<br>if(isset($_GET[‘num’])){<br>    $num = $_GET[‘num’];<br>    if($num==4476){<br>        die(“no no no!”);<br>    }<br>    if(preg_match(“/[a-z]/i”, $num)){<br>        die(“no no no!”);<br>    }<br>    if(intval($num,0)==4476){<br>        echo $flag;<br>    }else{<br>        echo intval($num,0);<br>    }<br>}<br>这题ban掉了字母，但是可以用八进制绕过<br>所以?num=010574</p>
+<h2 id="web94"><a href="#web94" class="headerlink" title="web94"></a>web94</h2><p>include(“flag.php”);<br>highlight_file(<strong>FILE</strong>);<br>if(isset($_GET[‘num’])){<br>    $num = $_GET[‘num’];<br>    if($num===”4476”){<br>        die(“no no no!”);<br>    }<br>    if(preg_match(“/[a-z]/i”, $num)){<br>        die(“no no no!”);<br>    }<br>    if(!strpos($num, “0”)){<br>        die(“no no no!”);<br>    }<br>    if(intval($num,0)===4476){<br>        echo $flag;<br>    }<br>}<br>strpos函数，返回字符串在另一个字符串中第一次出现的位置<br>不能以0开头了，这时候可以试试小数，intval只识别整数部分<br>所以?num=4476.0001</p>
+<h2 id="web95"><a href="#web95" class="headerlink" title="web95"></a>web95</h2><p>include(“flag.php”);<br>highlight_file(<strong>FILE</strong>);<br>if(isset($_GET[‘num’])){<br>    $num = $_GET[‘num’];<br>    if($num==4476){<br>        die(“no no no!”);<br>    }<br>    if(preg_match(“/[a-z]|./i”, $num)){<br>        die(“no no no!!”);<br>    }<br>    if(!strpos($num, “0”)){<br>        die(“no no no!!!”);<br>    }<br>    if(intval($num,0)===4476){<br>        echo $flag;<br>    }<br>}<br>弱比较不可以是4476，然后是传入参数不可以存在大小写的26个字母和“.”，接着是不可以以0开头，最后结束匹配时需要4476，一开始的弱比较，这里可以用010574(4476的八进制)绕过，直接到了strpos函数这里，这里不能以0开头，但在intval函数中最开头如果是+还是可以识别为原数<br>所以?num=+010574</p>
+<h2 id="web96"><a href="#web96" class="headerlink" title="web96"></a>web96</h2><p>highlight_file(<strong>FILE</strong>);<br>if(isset($_GET[‘u’])){<br>    if($_GET[‘u’]==’flag.php’){<br>        die(“no no no”);<br>    }else{<br>        highlight_file($_GET[‘u’]);<br>    }<br>}<br>不能以相对路径读，以绝对路径读就可以了<br>所以?u=/var/www/html/flag.php<br>或者也可以返回上一级然后再回来读取<br>?u=../html/flag.php<br>相对路径：<br> “./”：代表目前所在的目录。<br>“../”：代表上一层目录。<br>”/”开头：代表根目录。<br>isset()函数是PHP的内置函数，用于确定是否设置了变量。如果认为已设置变量，则意味着已声明该变量，并且该变量的值与NULL不同。简而言之，它检查变量是否已声明且不为null</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/12/web%E5%85%A5%E9%97%A889-92/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/apple-touch-icon-next.png">
+      <meta itemprop="name" content="清者">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The future is promising">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | The future is promising">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/02/12/web%E5%85%A5%E9%97%A889-92/" class="post-title-link" itemprop="url">web入门89-92</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-02-12 11:20:12 / 修改时间：11:57:32" itemprop="dateCreated datePublished" datetime="2023-02-12T11:20:12+08:00">2023-02-12</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="web89"><a href="#web89" class="headerlink" title="web89"></a>web89</h2><p>intval()函数：该函数是用于获取变量的整数值，又因其返回值 成功时返回 var 的 integer 值，失败时返回 0。 空的 array 返回 0，非空的 array 返回 1。//array是数组<br>实例<br>&lt;?php<br>echo intval(42);                      // 42<br>echo intval(4.2);                     // 4<br>echo intval(‘42’);                    // 42<br>echo intval(‘+42’);                   // 42<br>echo intval(‘-42’);                   // -42<br>echo intval(042);                     // 34<br>echo intval(‘042’);                   // 42<br>echo intval(1e10);                    // 1410065408<br>echo intval(‘1e10’);                  // 1<br>echo intval(0x1A);                    // 26<br>echo intval(42000000);                // 42000000<br>echo intval(420000000000000000000);   // 0<br>echo intval(‘420000000000000000000’); // 2147483647<br>echo intval(42, 8);                   // 42<br>echo intval(‘42’, 8);                 // 34<br>echo intval(array());                 // 0<br>echo intval(array(‘foo’, ‘bar’));     // 1<br>另外：intval处理开头是数字的字符串时，返回值为开头的数<br>且第二个参数设置0的时候，只要读到字符就会停止，不管他是不是科学计数法<br>第二个参数没设置的时候就不一样,他会正规的按照科学计数法<br>正则表达式匹配用的还不少，需学学<br>所以只要num是一个有值的数组<br>?num[]=1就可以达到要求</p>
+<h2 id="web90"><a href="#web90" class="headerlink" title="web90"></a>web90</h2><p>include(“flag.php”);<br>highlight_file(<strong>FILE</strong>);<br>if(isset($_GET[‘num’])){<br>    $num = $_GET[‘num’];<br>    if($num===”4476”){<br>        die(“no no no!”);//说明了num不能等于”4476”<br>    }<br>    if(intval($num,0)===4476){<br>        echo $flag;             //并且在intval函数第二个参数为0时要等于4476<br>    }else{<br>        echo intval($num,0);<br>    }<br>}<br>依据知识点intval处理开头是数字的字符串时，返回值为开头的数，可知只要在4476后面加上字母就行了，即如:4476a<br>所以?num=4476a即可</p>
+<h2 id="web91"><a href="#web91" class="headerlink" title="web91"></a>web91</h2><p>$a=$_GET[‘cmd’];<br>if(preg_match(‘/^php$/im’, $a)){   //需满足这个匹配<br>    if(preg_match(‘/^php$/i’, $a)){ //并且不能满足这个匹配<br>        echo ‘hacker’;<br>    }<br>    else{<br>        echo $flag;<br>    }<br>}<br>else{<br>    echo ‘nonononono’;<br>}</p>
+<p>解读代码，比较第一个正则匹配与第二个正则匹配的不同，发现第一个里面的i后面多了一个m，m表示多行模式，多行模式的意思是每一行都进行正则匹配<br>所以本题的第一个正则是要求分行后至少有一行是字符串”php”，第二个正则只能匹配字符串”php”<br> 因/m是换行匹配，所以第一个匹配是先换行再进行匹配，即相当于对传递参数的内容中的第二行进行匹配。而第二个正则匹配无换行匹配<br>所以用%0aphp(%0a是换行)<br>即可实现：第一次匹配的时候换行匹配到了php，第二次匹配因为没有进行换行匹配，所以就能成功绕过<br>%0a是\n的url编码，这里是不能用\n的</p>
+<h2 id="web92"><a href="#web92" class="headerlink" title="web92"></a>web92</h2><p>include(“flag.php”);<br>highlight_file(<strong>FILE</strong>);<br>if(isset($_GET[‘num’])){<br>    $num = $_GET[‘num’];<br>    if($num==4476){              //php弱类型比较<br>        die(“no no no!”);<br>    }<br>    if(intval($num,0)==4476){<br>        echo $flag;<br>    }else{<br>        echo intval($num,0);<br>    }</p>
+<p>该题只要不满足第一个比较，满足第二个比较即可<br>可以将4476进行8进制或者十六进制编码即可  即：?num=010574或?num=0x117c，又或?num=4476e10<br>o,Q为八进制前缀，0x为16进制前缀<br>一些编程语言中常常以数字0开始表明该数字是八进制<br>php弱类型比较(==或!=)：php弱类型变量是指,在声明一个变量时,我们不需要指明它保存的数据类型。<br>即是：不需要比较的两边数据类型相同，在进行比较的时候，会先将字符串类型转化成相同，再比较。<br>在字符串与数字弱比较时，字符串会被转换成数值进行比较，字符串的开始部分决定了它的值，如果该字符串以合法的数值开始，则使用该数值，否则其值为0。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -323,7 +543,7 @@ return语句会立即中止当前字符串的执行。
 <h2 id="php-input伪协议"><a href="#php-input伪协议" class="headerlink" title="php://input伪协议"></a>php://input伪协议</h2><p>(1)php://input是个可以访问请求的原始数据的只读流。<br>(2) 利用条件<br>allow_url_fopen 不做要求，allow_url_include=On<br>(3)利用姿势：<br>POST以下数据：‘);?&gt;<br>封装协议摘要(针对 php://filter，参考被筛选的封装器。)<br>受限于 allow_url_fopen No<br>受限于 allow_url_include 仅php://input、 php://stdin、php://memory和php://temp。</p>
 <h2 id="data-伪协议"><a href="#data-伪协议" class="headerlink" title="data://伪协议"></a>data://伪协议</h2><p>(1)data:// 一 数据<br>(2)使用版本：PHP 5.2.0起 data：数据流封装器开始有效。<br>(3)用法：<br>data://text/plain,<br>data://text/plain;base64, PD9waHAgcGhwaW5mbygpOyA/Pg==<br>封装协议摘要<br>受限于allow_url_fopen No<br>受限于allow_url_include Yes<br>允许读取 Yes<br>允许写入 No</p>
 <h2 id="http-伪协议"><a href="#http-伪协议" class="headerlink" title="http://伪协议"></a>http://伪协议</h2><p>(1)<a target="_blank" rel="noopener" href="http://--https//-%E8%AE%BF%E9%97%AEHTTP(s)%E7%BD%91%E5%9D%80">http://--https://-访问HTTP(s)网址</a><br>(2)允许通过HTTP1.0的GET方法，以只读访问文件或资源。<br>(3)HTTP请求会附带一个 Host:头，用于兼容基于域名的虚拟主机。如果在你的php.ini文件中或字节流上下文(context)配置了user_agent字符串，它也会被包含在请求之中。<br>封装协议概要<br>受allow_url_fopen 限制 Yes<br>允许读取 Yes<br>允许写入 No<br>允许添加 No<br>用法<br><a href="http://example.com/">http://example.com</a><br><a href="http://example.com/file.php?varl=vall&amp;var2=val2">http://example.com/file.php?varl=vall&amp;var2=val2</a><br><a href="http://user:password@example.com/">http://user:password@example.com</a><br><a href="https://example.com/">https://example.com</a><br><a href="https://example.com/file.php?varl=vall&amp;var2=val2">https://example.com/file.php?varl=vall&amp;var2=val2</a><br><a href="https://user:password@example.com/">https://user:password@example.com</a></p>
-<h2 id="ftp-伪协议"><a href="#ftp-伪协议" class="headerlink" title="ftp://伪协议"></a>ftp://伪协议</h2><p>(1)<a href="ftp://--ftps//">ftp://--ftps://</a> - 访问 FTP(s) URLs<br>(2)允许通过FTP读取存在的文件，以及创建新文件。<br>(3)如果服务器不支持被动(passive)模式的FTP，连接会失败。<br>(4)打开文件后你既可以读也可以写，但是不能同时进行。<br>(5)版本：php4.3以上<br>(6)PHP 5.0.0起文件可以通过<a href="ftp://url封装器来追加(append).在之前的版本,尝试通过ftp//%E6%9D%A5%E8%BF%BD%E5%8A%A0%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E5%B0%86%E4%BC%9A%E5%AF%BC%E8%87%B4%E9%94%99%E8%AF%AF%E3%80%82">ftp://URL封装器来追加(append)。在之前的版本，尝试通过ftp://来追加一个文件将会导致错误。</a><br>用法<br>(1)&gt;<a href="ftp://example.com/pub/file.txt">ftp://example.com/pub/file.txt</a><br>(2)<a href="ftp://user:password@example.com/pub/file.txt">ftp://user:password@example.com/pub/file.txt</a><br>(3)ftps://example.com/pub/file.txt<br>(4)ftps://user:<a href="mailto:&#112;&#97;&#115;&#x73;&#119;&#x6f;&#x72;&#100;&#64;&#x65;&#x78;&#97;&#109;&#x70;&#108;&#x65;&#x2e;&#99;&#x6f;&#x6d;">&#112;&#97;&#115;&#x73;&#119;&#x6f;&#x72;&#100;&#64;&#x65;&#x78;&#97;&#109;&#x70;&#108;&#x65;&#x2e;&#99;&#x6f;&#x6d;</a>/pub/file.txt<br>封装协议概要<br>属性 PHP 4 PHP 5<br>受allow_url_fopen影响 Yes Yes<br>允许读取 Yes Yes<br>允许写入 Yes (仅支持新文件) Yes(新文件/启用overwrite 后已存在的文件)<br>允许添加 No Yes</p>
+<h2 id="ftp-伪协议"><a href="#ftp-伪协议" class="headerlink" title="ftp://伪协议"></a>ftp://伪协议</h2><p>(1)<a href="ftp://--ftps//">ftp://--ftps://</a> - 访问 FTP(s) URLs<br>(2)允许通过FTP读取存在的文件，以及创建新文件。<br>(3)如果服务器不支持被动(passive)模式的FTP，连接会失败。<br>(4)打开文件后你既可以读也可以写，但是不能同时进行。<br>(5)版本：php4.3以上<br>(6)PHP 5.0.0起文件可以通过<a href="ftp://url封装器来追加(append).在之前的版本,尝试通过ftp//%E6%9D%A5%E8%BF%BD%E5%8A%A0%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E5%B0%86%E4%BC%9A%E5%AF%BC%E8%87%B4%E9%94%99%E8%AF%AF%E3%80%82">ftp://URL封装器来追加(append)。在之前的版本，尝试通过ftp://来追加一个文件将会导致错误。</a><br>用法<br>(1)&gt;<a href="ftp://example.com/pub/file.txt">ftp://example.com/pub/file.txt</a><br>(2)<a href="ftp://user:password@example.com/pub/file.txt">ftp://user:password@example.com/pub/file.txt</a><br>(3)ftps://example.com/pub/file.txt<br>(4)ftps://user:<a href="mailto:&#x70;&#x61;&#x73;&#x73;&#x77;&#111;&#x72;&#x64;&#64;&#x65;&#120;&#x61;&#109;&#x70;&#x6c;&#101;&#x2e;&#x63;&#111;&#x6d;">&#x70;&#x61;&#x73;&#x73;&#x77;&#111;&#x72;&#x64;&#64;&#x65;&#120;&#x61;&#109;&#x70;&#x6c;&#101;&#x2e;&#x63;&#111;&#x6d;</a>/pub/file.txt<br>封装协议概要<br>属性 PHP 4 PHP 5<br>受allow_url_fopen影响 Yes Yes<br>允许读取 Yes Yes<br>允许写入 Yes (仅支持新文件) Yes(新文件/启用overwrite 后已存在的文件)<br>允许添加 No Yes</p>
 <h2 id="phar"><a href="#phar" class="headerlink" title="phar"></a>phar</h2><p>phar介绍<br>(1)phar协议的作用是归档，自PHP5.3.0起开始有效<br>(2)Phar归档文件最有特色的特点是可以方便地将多个文件分组为一个文件。这样，phar归档文件提供了一种将完整的PHP应用程序分发到单个文件中并从该文件运行它的方法，而无需将其提取到磁盘中。<br>(3)phar 可以处理 tar、zip和phar文件<br>封装协议摘要<br>支持allow_url_fopen No<br>支持allow_url_include No<br>允许读取 Yes<br>允许写入 Yes</p>
 <h2 id="phar伪协议的利用方式"><a href="#phar伪协议的利用方式" class="headerlink" title="phar伪协议的利用方式"></a>phar伪协议的利用方式</h2><p>phar://phpinfo.zip/phpinfo.txt<br>注意事项：<br>(1)压缩包中文件的名字要和后面的一样<br>(2)压缩包在压缩后还可以改后缀名<br>其他归档压缩类扩展<br>Bzip2、zip、LZF等<br>zlib://– bzip2://-vzip://—压缩流<br>compress.zlib://file.gz<br>compress.bzip2://file.bz2<br>zip://archive.zip#dir/file.txt</p>
 <h2 id="zip-伪协议"><a href="#zip-伪协议" class="headerlink" title="zip://伪协议"></a>zip://伪协议</h2><p>(1)使用条件：<br>PHP&gt; =5.3.0，注意在windows下测试php要5.3.0~5.4才可以。在浏览器中要编码为%23，否则浏览器默认不会传输特殊字符。<br>(2)利用方式：<br>zip://[压缩文件绝对路径]#[压缩文件内的子文件名]<br>zip://xxx.zip#shell.txt<br>zip://xxx.png#shell.php</p>
@@ -716,234 +936,6 @@ return语句会立即中止当前字符串的执行。
 <h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>(1)远程包含文件路径必须为绝对路径<br>(2)被包含的文件不能够被服务器解析，如php文件</p>
 <h3 id="文件包含漏洞防御"><a href="#文件包含漏洞防御" class="headerlink" title="文件包含漏洞防御"></a>文件包含漏洞防御</h3><p>(1)不要直接导入用户输入的内容(本地与远程文件包含漏洞相同)做好过滤<br>(2)路径限制：限制被包含的文件只能在某一目录内，并且一定要禁止目录跳转；开启 open_basedir函数，只允许用户访问web目录，可以防止包含其他目录的文件。<br>(3)做好文件的权限管理，等。</p>
 <h3 id="读取敏感文件"><a href="#读取敏感文件" class="headerlink" title="读取敏感文件"></a>读取敏感文件</h3><p>Windows<br>(1)c:\boot.ini//查看系统版本<br>(2)c:windows\system32\inetsrv\MetaBase.xml// IIS配置文件<br>(3)c:windows\repair\sam//存储Windows系统初次安装的密码<br>(4)c:\ProgramFiles\mysql\my.ini // MySQL配置<br>(5)c:\ProgramFiles\mysql\data\mysq/\user.MYD // MySQL root密码<br>(6)c:windows\php.ini// php配置信息<br>Linux<br>(1)/etc/passwd//账户信息<br>(2)/etc/shadow//账户密码文件<br>(3)/usr/local/app/apache2/conf/httpd.conf// Apache2默认配置文件<br>(4)/usr/local/app/apache2/conf/extra/httpd-vhost.conf//虚拟网站配置<br>(5)/usr/local/app/php5/lib/php.ini//PHP相关配置<br>(6)/etc/httpd/conf/httpd.conf// Apache配置文件<br>(7) /etc/my.conf // mysql 配置文件</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/25/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/apple-touch-icon-next.png">
-      <meta itemprop="name" content="清者">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="The future is promising">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | The future is promising">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/01/25/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" class="post-title-link" itemprop="url">文件上传</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-01-25 20:39:28 / 修改时间：20:46:20" itemprop="dateCreated datePublished" datetime="2023-01-25T20:39:28+08:00">2023-01-25</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="文件上传点"><a href="#文件上传点" class="headerlink" title="文件上传点"></a>文件上传点</h2><p>头像，网站logo，插件管理，水印图片处等<br>任何可以上传文件的地方，都可能存在文件上传漏洞</p>
-<h2 id="黑名单过滤"><a href="#黑名单过滤" class="headerlink" title="黑名单过滤"></a>黑名单过滤</h2><p>畸形后缀名<br>php,php3,php4,php5,php7,pht,phtml,phar,phps,Asp,aspx,cer,cdx,asa,asax,jsp,jspa,jspx</p>
-<h2 id="windows特性绕过"><a href="#windows特性绕过" class="headerlink" title="windows特性绕过"></a>windows特性绕过</h2><p>大小写绕过<br>windows空格绕过<br>windows后缀点绕过<br>windows文件流绕过：上传shell.php::$DATA</p>
-<h2 id="白名单过滤"><a href="#白名单过滤" class="headerlink" title="白名单过滤"></a>白名单过滤</h2><p>00截断<br>解析漏洞<br>文件包含<br>条件竞争上传</p>
-<h2 id="Apache解析漏洞"><a href="#Apache解析漏洞" class="headerlink" title="Apache解析漏洞"></a>Apache解析漏洞</h2><p>.htaccess<br>htaccess是一个完整的文件名，不仅仅是文件的扩展名<br>如.htaccess的代码如下：<br>&lt;FilesMatch”1.jpg”&gt;<br>SetHandler application/x-httpd-php</p>
-<h2 id="Nginx解析漏洞"><a href="#Nginx解析漏洞" class="headerlink" title="Nginx解析漏洞"></a>Nginx解析漏洞</h2><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><p>上传文件名如：1.jpg空格<br>访问例如：1.jpg…php<br>访问的时候抓包，修改后缀为1.jpg[0x20][0x00][0x2e]php (使用burp修改，调整hex即可)<br>修改后进行访问就会发现jpg图片会被当做php解析</p>
-<h2 id="使用-user-ini绕过黑名单"><a href="#使用-user-ini绕过黑名单" class="headerlink" title="使用.user.ini绕过黑名单"></a>使用.user.ini绕过黑名单</h2><h3 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h3><p>上传一张图片<br>上传.user.ini文件内容为：auto_prepend_file=1.png<br>访问<a target="_blank" rel="noopener" href="http://ip/upload/2.php/xx.php(%E7%9B%AE%E5%BD%95%E4%B8%AD%E5%AD%98%E5%9C%A8%E7%9A%84%E4%B8%80%E4%B8%AAphp%E6%96%87%E4%BB%B6)">http://IP/upload/2.php/xx.php(目录中存在的一个php文件)</a></p>
-<h2 id="IIS解析漏洞"><a href="#IIS解析漏洞" class="headerlink" title="IIS解析漏洞"></a>IIS解析漏洞</h2><p>目录解析<br><a target="_blank" rel="noopener" href="http://www.xxx.com/xx.asp/xx.jpg">www.xxx.com/xx.asp/xx.jpg</a><br>文件解析<br><a target="_blank" rel="noopener" href="http://www.xxx.com/xx.asp;.jpg">www.xxx.com/xx.asp;.jpg</a><br>我们把下面的代码，插入到一张图片中<br>‘)?&gt;<br>那么，访问x.x.x/upload/1.jpg/.php,就会在当前目录生成一个木马</p>
-<h2 id="Apache解析漏洞-1"><a href="#Apache解析漏洞-1" class="headerlink" title="Apache解析漏洞"></a>Apache解析漏洞</h2><p>在一个后端黑名单判断的文件上传中<br>当Apache版本比较老是就可以用如：1.php.aaaaaaaaaaaaaaaaaaa………的方式进行绕过</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/20/sql%E6%B3%A8%E5%85%A5%E4%B9%8B%E5%B8%B8%E8%A7%81%E7%BB%95%E8%BF%87%E6%96%B9%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/apple-touch-icon-next.png">
-      <meta itemprop="name" content="清者">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="The future is promising">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | The future is promising">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/01/20/sql%E6%B3%A8%E5%85%A5%E4%B9%8B%E5%B8%B8%E8%A7%81%E7%BB%95%E8%BF%87%E6%96%B9%E5%BC%8F/" class="post-title-link" itemprop="url">sql注入之常见绕过方式</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-01-20 17:21:37 / 修改时间：17:48:27" itemprop="dateCreated datePublished" datetime="2023-01-20T17:21:37+08:00">2023-01-20</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="双写绕过"><a href="#双写绕过" class="headerlink" title="双写绕过"></a>双写绕过</h2><p>如当我们进行联合查询时输入union select发现被过滤了<br>那我们便可以输入ununionion selselectect来进行过滤<br>有的时候会被过滤两次或更多这时我们可以也多输入几次来进行绕过</p>
-<h2 id="大小写绕过"><a href="#大小写绕过" class="headerlink" title="大小写绕过"></a>大小写绕过</h2><p>如当我们进行联合查询时输入union select发现被过滤了<br>我们可以将所输入内容其中任何一个字母来进行大小写替换如：uNion select来进行过滤</p>
-<h2 id="空格绕过"><a href="#空格绕过" class="headerlink" title="空格绕过"></a>空格绕过</h2><p>如果空格被过滤掉了，那么我们可以用/**/，%09，%0a，%0d，%0b，（），+，-，tab键，两个空格，反引号等进行替换来达到绕过的目的</p>
-<h2 id="等号绕过"><a href="#等号绕过" class="headerlink" title="等号绕过"></a>等号绕过</h2><p>当等号被过滤掉时我们可以用like，&lt;&gt;来进行代替<br>&lt;&gt;等价于!=所以我们可以在&lt;&gt;前加个!就变成等于了</p>
-<h2 id="宽字节注入"><a href="#宽字节注入" class="headerlink" title="宽字节注入"></a>宽字节注入</h2><h3 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h3><p>在实际应用中，为防止注入漏洞通常会把单引号处理下比如：<br>$id=$_GET[‘id’]；<br>select * from users where id = $id’<br>上边呢我们输入进去的 SQL 语句，都会赋值给 $id这个变量，然后会被包含在引号里，在PHP中引号里的内容是属于字符串的，所以我们直接在这里输入的一些 SQL 命令都会被当作字符串处理，这些命令就不会起到作用。<br>所以我们在字符型注入中才会先用单引号闭合下，再输入SQL命令，这样后面的命令才会执行。如果程序中在我们输入的单引号前加上个反斜杠比如：\’。这样的话这个单引号就是个字符了，没有单引号闭合的作用，所以就起到了防护的作用<br>为了突破这个防护，我们可以使用宽字节注入的方式进行突破：<br>我们的使用方式是：%df’<br>当我们在单引号前加上%df的时候，也就是输入%df’这样传入到数据库中就会变成：%df%5c’<br>在GBK的编码表中<a target="_blank" rel="noopener" href="https://www.qqxiuzi.cn/zh/hanzi-gbk-bianma.php%E4%BE%BF%E4%BC%9A%E6%9C%89%E7%9B%B8%E5%AF%B9%E5%BA%94%E7%9A%84%E5%AD%97">https://www.qqxiuzi.cn/zh/hanzi-gbk-bianma.php便会有相对应的字</a><br>另外%DE%5c,%E0%5c等都是可以的</p>
-<h3 id="注入步骤"><a href="#注入步骤" class="headerlink" title="注入步骤"></a>注入步骤</h3><p>一，在id=1后面添加单引号发现被转义<br>二，使用%df进行闭合:id=1%df’ and 1=1%23</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/14/sql%E6%B3%A8%E5%85%A5%E4%B9%8B%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/apple-touch-icon-next.png">
-      <meta itemprop="name" content="清者">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="The future is promising">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | The future is promising">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/01/14/sql%E6%B3%A8%E5%85%A5%E4%B9%8B%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5/" class="post-title-link" itemprop="url">sql注入之报错注入</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-01-14 18:29:18 / 修改时间：19:38:57" itemprop="dateCreated datePublished" datetime="2023-01-14T18:29:18+08:00">2023-01-14</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="floor报错注入"><a href="#floor报错注入" class="headerlink" title="floor报错注入"></a>floor报错注入</h2><h3 id="rand-0-与rand-的区别"><a href="#rand-0-与rand-的区别" class="headerlink" title="rand(0)与rand()的区别"></a>rand(0)与rand()的区别</h3><p>rand(0)相当于给rand()函数传递了一个参数然后rand()函数会根据0这个参数进行随机数生成<br>rand()生成的数字是完全随机的,而rand(0)是有规律的生成</p>
-<h3 id="count-的作用"><a href="#count-的作用" class="headerlink" title="count(*)的作用"></a>count(*)的作用</h3><p>count()是用来统计表中记录的一个函数,返回匹配条件的行数<br>count(*)包含所有列,返回表中记录数,相当于统计表中的行数</p>
-<h3 id="group-by的作用"><a href="#group-by的作用" class="headerlink" title="group by的作用"></a>group by的作用</h3><p>group by是用来进行分组查询的。对指定列的查询结果做分组统计，最终得到一个分组汇总表</p>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>id=1’ and  (select count(*),floor(rand(0)<em>2)as a from information_schema.tables group by a)– -<br>id=1’ and (select 1 from(select count(</em>),floor(rand(0)*2)as a from information_schema.tables group by a))– -<br>其中floor(rand(0)<em>2)会生成一个011011的序列，而且每次运行的时候都不变<br>所以count(</em>),floor(rand(0)*2)as a from users group by a运行的时候，第一次拿到的group by后面的值是0，在虚拟表中不存在，所以要再运算一次来获取group by后面的值，这时候获取的值是1<br>所以group by要进行两次运算</p>
-<h2 id="extractvalue报错注入"><a href="#extractvalue报错注入" class="headerlink" title="extractvalue报错注入"></a>extractvalue报错注入</h2><p>extractvalue(XML_document,XPath_string)<br>第一个参数：XML_document是string格式，为XML文档对象的名称，表示传入的目标XML文档<br>第二个参数：XPath_string(Xpath格式的字符串)，表示xml路径<br>作用：从目标XML中返回包含所查询的字符串<br>例：id=1 and (extractvalue(1,concat((select database()))))<br>    id=1 and (extractvalue(1,concat(‘~’,(select database()))))<br>    id=1 and (extractvalue(1,concat(‘/‘,(select database()))))</p>
-<h2 id="updatexml报错注入"><a href="#updatexml报错注入" class="headerlink" title="updatexml报错注入"></a>updatexml报错注入</h2><p>updatexml(XML_document,XPath_string,new_value)<br>第一个参数：XML_document是string格式，为XML文档对象的名称，文中为Doc<br>第二个参数：XPath_string(Xpath格式的字符串)<br>第三个参数：new_value,string格式，替换查找到的符合条件的数据<br>函数作用：改变文档中符合条件的节点的值</p>
 
       
     </div>
