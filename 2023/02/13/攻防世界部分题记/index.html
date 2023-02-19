@@ -19,29 +19,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="绕过常见方式注释#,–,– -,–+,&#x2F;&#x2F;,&#x2F;**&#x2F;,&#x2F;letmetest&#x2F;,;%00 空格可以代替空格的字符&#x2F;**&#x2F;,(),+,%20,%09,%0a,0x0a,0x0b,0x0c,0x0d等还可以使用+,-,~,.等例如:union+select+1,2 编码hex编码，URL编码，宽字节，Unicode编码(iis支持)URL编码:%6f%72%20%31%3d%31(and 1&#x3D;1)Uni">
+    <meta name="description" content="php2扫描一下后台文件访问index.phps(网址后面加上&#x2F;index.phps)得到not allowed!“); exit(); } $_GET[id] &#x3D; urldecode($_GET[id]); if($_GET[id] &#x3D;&#x3D; “admin”) { echo “Access granted!“; echo “Key: xxxxxxx“; } ?&gt; Can you anthent">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sql注入之bypass技巧">
-<meta property="og:url" content="http://example.com/2023/01/11/sql%E6%B3%A8%E5%85%A5%E4%B9%8Bbypass%E6%8A%80%E5%B7%A7/index.html">
+<meta property="og:title" content="攻防世界部分题记">
+<meta property="og:url" content="http://example.com/2023/02/13/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E9%83%A8%E5%88%86%E9%A2%98%E8%AE%B0/index.html">
 <meta property="og:site_name" content="The future is promising">
-<meta property="og:description" content="绕过常见方式注释#,–,– -,–+,&#x2F;&#x2F;,&#x2F;**&#x2F;,&#x2F;letmetest&#x2F;,;%00 空格可以代替空格的字符&#x2F;**&#x2F;,(),+,%20,%09,%0a,0x0a,0x0b,0x0c,0x0d等还可以使用+,-,~,.等例如:union+select+1,2 编码hex编码，URL编码，宽字节，Unicode编码(iis支持)URL编码:%6f%72%20%31%3d%31(and 1&#x3D;1)Uni">
+<meta property="og:description" content="php2扫描一下后台文件访问index.phps(网址后面加上&#x2F;index.phps)得到not allowed!“); exit(); } $_GET[id] &#x3D; urldecode($_GET[id]); if($_GET[id] &#x3D;&#x3D; “admin”) { echo “Access granted!“; echo “Key: xxxxxxx“; } ?&gt; Can you anthent">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-01-11T09:06:37.000Z">
-<meta property="article:modified_time" content="2023-01-11T10:00:02.193Z">
+<meta property="article:published_time" content="2023-02-13T11:45:44.000Z">
+<meta property="article:modified_time" content="2023-02-13T12:20:35.011Z">
 <meta property="article:author" content="清者">
-<meta property="article:tag" content="拼搏">
-<meta property="article:tag" content="奋斗">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2023/01/11/sql%E6%B3%A8%E5%85%A5%E4%B9%8Bbypass%E6%8A%80%E5%B7%A7/">
+<link rel="canonical" href="http://example.com/2023/02/13/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E9%83%A8%E5%88%86%E9%A2%98%E8%AE%B0/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/01/11/sql%E6%B3%A8%E5%85%A5%E4%B9%8Bbypass%E6%8A%80%E5%B7%A7/","path":"2023/01/11/sql注入之bypass技巧/","title":"sql注入之bypass技巧"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/02/13/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E9%83%A8%E5%88%86%E9%A2%98%E8%AE%B0/","path":"2023/02/13/攻防世界部分题记/","title":"攻防世界部分题记"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>sql注入之bypass技巧 | The future is promising</title>
+<title>攻防世界部分题记 | The future is promising</title>
   
 
 
@@ -141,7 +139,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%95%E8%BF%87%E5%B8%B8%E8%A7%81%E6%96%B9%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">绕过常见方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A"><span class="nav-number">1.1.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A9%BA%E6%A0%BC"><span class="nav-number">1.2.</span> <span class="nav-text">空格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E7%A0%81"><span class="nav-number">1.3.</span> <span class="nav-text">编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%89%E4%BB%B7%E5%AD%97%E7%AC%A6%E4%BB%A5%E5%8F%8A%E7%AD%89%E4%BB%B7%E5%87%BD%E6%95%B0"><span class="nav-number">1.4.</span> <span class="nav-text">等价字符以及等价函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql%E7%89%B9%E6%80%A7"><span class="nav-number">1.5.</span> <span class="nav-text">mysql特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97%E6%8B%86%E5%88%86"><span class="nav-number">1.6.</span> <span class="nav-text">关键字拆分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E8%81%94%E6%B3%A8%E9%87%8A"><span class="nav-number">1.7.</span> <span class="nav-text">内联注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E6%B3%A8%E5%85%A5%E7%82%B9"><span class="nav-number">1.8.</span> <span class="nav-text">判断注入点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E5%88%97%E6%95%B0"><span class="nav-number">1.9.</span> <span class="nav-text">判断列数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2"><span class="nav-number">1.10.</span> <span class="nav-text">联合查询</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#php2"><span class="nav-number">1.</span> <span class="nav-text">php2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Training-WWW-Robots"><span class="nav-number">2.</span> <span class="nav-text">Training-WWW-Robots</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unserialize3"><span class="nav-number">3.</span> <span class="nav-text">unserialize3</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -202,7 +200,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/11/sql%E6%B3%A8%E5%85%A5%E4%B9%8Bbypass%E6%8A%80%E5%B7%A7/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/13/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E9%83%A8%E5%88%86%E9%A2%98%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/apple-touch-icon-next.png">
@@ -215,12 +213,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="sql注入之bypass技巧 | The future is promising">
+      <meta itemprop="name" content="攻防世界部分题记 | The future is promising">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          sql注入之bypass技巧
+          攻防世界部分题记
         </h1>
 
         <div class="post-meta-container">
@@ -232,7 +230,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-01-11 17:06:37 / 修改时间：18:00:02" itemprop="dateCreated datePublished" datetime="2023-01-11T17:06:37+08:00">2023-01-11</time>
+      <time title="创建时间：2023-02-13 19:45:44 / 修改时间：20:20:35" itemprop="dateCreated datePublished" datetime="2023-02-13T19:45:44+08:00">2023-02-13</time>
     </span>
 
   
@@ -245,16 +243,18 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="绕过常见方式"><a href="#绕过常见方式" class="headerlink" title="绕过常见方式"></a>绕过常见方式</h2><h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>#,–,– -,–+,//,/**/,/<em>letmetest</em>/,;%00</p>
-<h3 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h3><p>可以代替空格的字符<br>/**/,(),+,%20,%09,%0a,0x0a,0x0b,0x0c,0x0d等<br>还可以使用<br>+,-,~,.等<br>例如:union+select+1,2</p>
-<h3 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h3><p>hex编码，URL编码，宽字节，Unicode编码(iis支持)<br>URL编码:%6f%72%20%31%3d%31(and 1=1)<br>Unicode编码:un%u0069on</p>
-<h3 id="等价字符以及等价函数"><a href="#等价字符以及等价函数" class="headerlink" title="等价字符以及等价函数"></a>等价字符以及等价函数</h3><p>and==&gt;&amp;&amp;<br>or==&gt;||<br>xor==&gt;^<br>not==&gt;!<br>hex(),bin()==&gt;ascii()<br>concat_ws()==&gt;group_concat()<br>sleep()==&gt;benchmark()<br>mid(),substr()==&gt;substring()<br>@@user==&gt;user()<br>@@datadir==&gt;datadir()</p>
-<h3 id="mysql特性"><a href="#mysql特性" class="headerlink" title="mysql特性"></a>mysql特性</h3><p>mysql中=为等于的意思,只有在update中是赋值<br>:=  赋值<br>@   @加变量名可以直接调用</p>
-<h3 id="关键字拆分"><a href="#关键字拆分" class="headerlink" title="关键字拆分"></a>关键字拆分</h3><p>se’+’le’+’ct’<br>%S%E%L%E%C%T1<br>U/**/NION</p>
-<h3 id="内联注释"><a href="#内联注释" class="headerlink" title="内联注释"></a>内联注释</h3><p>/<em>!Unlon</em>/</p>
-<h3 id="判断注入点"><a href="#判断注入点" class="headerlink" title="判断注入点"></a>判断注入点</h3><p>and 1=1,and ‘a’=’a’,and 1(and 0),and hex(1),and hex(0),and !,/<em>!1</em>/,/<em>!0</em>/,and–+a%0a1/<em>!=</em>/0</p>
-<h3 id="判断列数"><a href="#判断列数" class="headerlink" title="判断列数"></a>判断列数</h3><p>order by 20 (后面加数字)</p>
-<h3 id="联合查询"><a href="#联合查询" class="headerlink" title="联合查询"></a>联合查询</h3><p>union select 1,2,3,……,得到的列数<br>之后便可以替换掉其中的数字来获取想要的信息</p>
+        <h2 id="php2"><a href="#php2" class="headerlink" title="php2"></a>php2</h2><p>扫描一下后台文件<br>访问index.phps(网址后面加上/index.phps)得到<br>not allowed!<br>“); exit(); } $_GET[id] = urldecode($_GET[id]); if($_GET[id] == “admin”) { echo “<br>Access granted!<br>“; echo “<br>Key: xxxxxxx<br>“; } ?&gt; Can you anthenticate to this website?<br>代码审计<br>urldecode urlencode的区别<br>urlencode()函数原理就是首先把中文字符转换为十六进制，然后在每个字符前面加一个标识符%。 urldecode()函数与urlencode()函数原理相反，用于解码已编码的 URL 字符串，其原理就是把十六进制字符串转换为中文字符<br>发现这里在进行url解码，如果解码后的变量id等于admin将会给出flag<br>浏览器本身会进行因此url解码，这里相当于进行两次url解码，只需要让id后的值等于admin进行两次url编码，为了方便我们可以将a进行两次编码，<br>即输入?id=%2561dmin就行了</p>
+<h2 id="Training-WWW-Robots"><a href="#Training-WWW-Robots" class="headerlink" title="Training-WWW-Robots"></a>Training-WWW-Robots</h2><p>打开后得到<br>In this little training challenge, you are going to learn about the Robots_exclusion_standard.<br>The robots.txt file is used by web crawlers to check if they are allowed to crawl and index your website or only parts of it.<br>Sometimes these files reveal the directory structure instead protecting the content from being crawled.<br>Enjoy!<br>进行翻译得到<br>在这个小小的训练挑战中，您将了解Robots_exclusion_standard。<br>网络爬虫使用 robots.txt 文件来检查是否允许他们对您的网站或仅部分网站进行爬网和索引。<br>有时这些文件会显示目录结构，而不是保护内容不被抓取。<br>享受！<br>然后前往robots.txt(/robots.txt)<br>再前往fl0g.php(/fl0g.php)<br>即可得到falg</p>
+<h2 id="unserialize3"><a href="#unserialize3" class="headerlink" title="unserialize3"></a>unserialize3</h2><p>根据题目可知需要利用反序列化字符串来进行解题，根据源码提示需要构造code<br>编辑PHP脚本输出序列化的字符串：<br><?php
+class xctf{
+public $flag = '111';
+public function __wakeup(){
+exit('bad requests');
+}
+}
+$a = new xctf();
+print(serialize($a));
+?><br>PHP在线测试工具：<a target="_blank" rel="noopener" href="https://www.it1352.com/Onlinetools/details/8">https://www.it1352.com/Onlinetools/details/8</a><br>运行过后得到O:4:”xctf”:1:{s:4:”flag”;s:3:”111”;}<br>对于这个字符串我们可以看到它有一个变量值（”xctf”:后面的1）。而对于反序列化来说如果字符串中的变量的数目和真实的数目不一样那么__wakeup会出现错误，我们就造成了反序列化漏洞<br>所以我们在填写字符串时将变量值的数目从1改成2<br>即输入?code=O:4:”xctf”:2:{s:4:”flag”;s:3:”111”;}即可</p>
 
     </div>
 
@@ -263,22 +263,18 @@
     
 
     <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E6%8B%BC%E6%90%8F/" rel="tag"># 拼搏</a>
-              <a href="/tags/%E5%A5%8B%E6%96%97/" rel="tag"># 奋斗</a>
-          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/12/16/hello-world/" rel="prev" title="Hello World">
-                  <i class="fa fa-chevron-left"></i> Hello World
+                <a href="/2023/02/12/web%E5%85%A5%E9%97%A897-99/" rel="prev" title="web入门97-99">
+                  <i class="fa fa-chevron-left"></i> web入门97-99
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/01/13/sql%E6%89%8B%E5%B7%A5%E6%B3%A8%E5%85%A5/" rel="next" title="sql 手工注入">
-                  sql 手工注入 <i class="fa fa-chevron-right"></i>
+                <a href="/2023/02/15/%E9%83%A8%E5%88%86%E9%A2%98%E8%AE%B0/" rel="next" title="部分题记">
+                  部分题记 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>

